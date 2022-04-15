@@ -1,5 +1,11 @@
 import './App.css';
+import './assets/css/bootstrap.min.css'
+import './assets/css/venobox.min.css'
+import './assets/css/style.css'
+import './assets/css/media.css'
+
 import HomeScreen from "./Screens/HomeScreen"
+
 
 function App() {
   return (
