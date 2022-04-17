@@ -8,7 +8,7 @@ const AllAppsScreen = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 m-auto">
-                            <div className="banner_text text-center">
+                            <div className="apps-banner_text text-center">
                                 <h3 className='launch-h3'>Build With Akool</h3>
                             </div>
                         </div>

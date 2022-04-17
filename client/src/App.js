@@ -2,6 +2,7 @@ import './assets/css/bootstrap.min.css'
 import './assets/css/venobox.min.css'
 import './assets/css/style.css'
 import './assets/css/launch.css'
+import './assets/css/app.intro.css'
 import './assets/css/media.css'
 import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";

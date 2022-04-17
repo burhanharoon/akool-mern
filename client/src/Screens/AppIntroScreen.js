@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import Carousel from '../Components/Carousel'
-import { Helmet } from "react-helmet";
 
 const AppIntroScreen = () => {
     const initialValue = {
@@ -17,15 +16,12 @@ const AppIntroScreen = () => {
 
     return (
         <>
-            <Helmet>
-                <link rel='stylesheet' href='../assets/css/app.intro.css' />
-            </Helmet>
             <section className="banner_two">
                 <div className="container banner_container">
                     <div className="row">
                         <div className="col-lg-10">
                             <div className="banner_text">
-                                <h3>Akool Marketplace</h3>
+                                <h3 className='app-intro-h3'>Akool Marketplace</h3>
                                 <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                                     commodo consequat.
                                     <span className="text_span">Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -67,7 +63,7 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
                             <div className="about_text_part">
-                                <h3>About the App</h3>
+                                <h3 className='app-intro-h3'>About the App</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                                     labore et dolore magna aliqua.
                                     <span className="d-block">
@@ -97,7 +93,7 @@ const AppIntroScreen = () => {
                                     <img src="/images/about_section_two.png" alt="about" className="img-fluid" />
                                 </div>
                                 <div className="about_text_part">
-                                    <h3>What's our main goal?</h3>
+                                    <h3 className='app-intro-h3'>What's our main goal?</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                         ut labore et dolore magna aliqua.
                                         <span className="d-block">
@@ -122,7 +118,7 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-6 m-auto">
                             <div className="heading_text text-center">
-                                <h3>Testimonials</h3>
+                                <h3 className='app-intro-h3'>Testimonials</h3>
                             </div>
 
                         </div>
@@ -147,7 +143,7 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-6 m-auto">
                             <div className="heading_text text-center">
-                                <h3>FAQs</h3>
+                                <h3 className='app-intro-h3'>FAQs</h3>
                             </div>
 
                         </div>
@@ -220,7 +216,7 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-6 m-auto">
                             <div className="heading_text text-center">
-                                <h3>Why Akool Marketplace</h3>
+                                <h3 className='app-intro-h3'>Why Akool Marketplace</h3>
                                 <div></div>
                             </div>
                         </div>
@@ -232,7 +228,7 @@ const AppIntroScreen = () => {
                             <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
-                            <h3>Feature 1</h3>
+                            <h3 className='app-intro-h3'>Feature 1</h3>
                             <p>Lorem ipsum dolor sit amet<br>, consectetur adipiscing elit, sed do<br> eiusmod tempor incididunt ut labore et<br> dolore magna aliqua. </p>
                         </div>
                     </div>
@@ -243,7 +239,7 @@ const AppIntroScreen = () => {
                             <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
-                            <h3>Feature 1</h3>
+                            <h3 className='app-intro-h3'>Feature 1</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                     </div>
@@ -254,7 +250,7 @@ const AppIntroScreen = () => {
                             <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
-                            <h3>Feature 1</h3>
+                            <h3 className='app-intro-h3'>Feature 1</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                         </div>
                     </div>
@@ -271,7 +267,7 @@ const AppIntroScreen = () => {
                                     <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
-                                    <h3>Feature 1</h3>
+                                    <h3 className='app-intro-h3'>Feature 1</h3>
                                     <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
                                 </div>
                             </div>
@@ -280,7 +276,7 @@ const AppIntroScreen = () => {
                                     <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
-                                    <h3>Feature 1</h3>
+                                    <h3 className='app-intro-h3'>Feature 1</h3>
                                     <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
                                 </div>
                             </div>
@@ -289,7 +285,7 @@ const AppIntroScreen = () => {
                                     <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
-                                    <h3>Feature 1</h3>
+                                    <h3 className='app-intro-h3'>Feature 1</h3>
                                     <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
                                 </div>
                             </div>
@@ -305,7 +301,7 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-6 m-auto">
                             <div className="heading_text text-center">
-                                <h3>CTA Section</h3>
+                                <h3 className='app-intro-h3'>CTA Section</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                                 <a href="true">Download an App</a>
                             </div>

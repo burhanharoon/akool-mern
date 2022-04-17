@@ -7,9 +7,9 @@ const Navbar = ({ hideNavItems }) => {
         <>
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a className="navbar-brand" href='true' title="Home">
+                    <Link className="navbar-brand" to={'/'} title="Home">
                         <img src="images/logo.png" alt="" />
-                    </a>
+                    </Link>
                     <button onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -28,18 +28,13 @@ const Navbar = ({ hideNavItems }) => {
                                 <li className="nav-item">
                                     <a className="nav-link nav_btn two" href='true'>Login</a>
                                 </li>
-                            </ul> : <ul className="navbar-nav ms-auto">
+                            </ul> :
+                            <ul className="navbar-nav ms-auto">
                                 <li className="nav-item">
-                                    <a className="nav-link page_link" href='true'>Akool</a>
+                                    <Link to='/' className="nav-link page_link">Akool</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link page_link" href='true'>Products</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page_link" href='true'>Akool</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link page_link" href='true'>Products</a>
+                                    <Link className="nav-link page_link" to='/apps'>Products</Link>
                                 </li>
                                 <li>
                                     <div className="gap"></div>
