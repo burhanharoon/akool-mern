@@ -1,5 +1,5 @@
 import './assets/css/bootstrap.min.css'
-import './assets/css/venobox.min.css'
+// import './assets/css/venobox.min.css'
 import './assets/css/style.css'
 import './assets/css/launch.css'
 import './assets/css/app.intro.css'

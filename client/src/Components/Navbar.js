@@ -8,7 +8,7 @@ const Navbar = ({ hideNavItems }) => {
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                     <Link className="navbar-brand" to={'/'} title="Home">
-                        <img src="images/logo.png" alt="" />
+                        <img src="/images/logo.png" alt="" />
                     </Link>
                     <button onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
