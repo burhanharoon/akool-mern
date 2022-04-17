@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeScreen from "./Screens/HomeScreen"
 import AppIntroScreen from './Screens/AppIntroScreen';
-import AllAppsScreen from './Screens/AppsScreen';
+import AppsScreen from './Screens/AppsScreen';
 import Navbar from './Components/Navbar';
 import AppStoreScreen from './Screens/AppStoreScreen';
 
@@ -17,14 +17,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' >
-          <Route index element={<AppStoreScreen />} />
+        <Route path='/' element={<Navbar />} >
+          <Route index element={<HomeScreen />} />
         </Route>
         <Route path='/apps' element={<Navbar hideNavItems />}>
           <Route path=':id' element={<AppIntroScreen />} />
-          <Route index element={<AllAppsScreen />} />
+          <Route index element={<AppsScreen />} />
         </Route>
       </Routes>
+      <Route path='/login' element={<AppStoreScreen />} />
     </BrowserRouter>
   );
 }

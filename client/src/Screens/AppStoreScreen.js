@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const AppStoreScreen = () => {
+    const [showNav, setShowNav] = useState(false)
     return (
         <>
-
             <div class="dash-area">
                 <div class="dash-fl">
                     <div class="dash-left">
@@ -19,17 +19,16 @@ const AppStoreScreen = () => {
                     </div>
                     <div class="dash-right">
                         <div class="store-baner" style={{ backgroundImage: "url('images/app_intro_bg.png')" }}>
-                            <a title="nav_icon" class="dash-right-btn col-md-block" data-bs-toggle="offcanvas"
-                                href="trueoffcanvasExample" role="button" aria-controls="offcanvasExample">
+                            <div title="nav_icon" onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} class="dash-right-btn col-md-block" data-bs-toggle="offcanvas"
+                                role="button" aria-controls="offcanvasExample">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
-                            </a>
-                            <div class="offcanvas offcanvas-start col-md-block" tabindex="-1" id="offcanvasExample"
-                                aria-labelledby="offcanvasExampleLabel">
+                            </div>
+                            <div class={showNav ? "offcanvas offcanvas-start col-md-block show" : "offcanvas offcanvas-start col-md-block"} style={showNav ? { visibility: "visible" } : { visibility: "hidden" }} >
                                 <div class="offcanvas-header">
                                     <div class="dash-logo">
                                         <a href="true"><img src="/images/footer_logo.png" alt="" /></a>
                                     </div>
-                                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                    <button type="button" class="btn-close text-reset" onClick={() => { setShowNav(false) }}
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="offcanvas-body">
@@ -45,16 +44,17 @@ const AppStoreScreen = () => {
 
                                 </div>
                             </div>
-                            <h3>App Store</h3>
+                            <h3 className='launch-h3'>App Store</h3>
                             <a title="nav_icon" href="true">
                                 <img src="/images/man.png" alt="" />
                                 <span><i class="fa fa-chevron-down" aria-hidden="true" style={{ color: "#fff;" }}></i></span>
                             </a>
+                            <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
                         <div class="used-area">
                             <div class="container">
                                 <div class="section-title">
-                                    <h3>Used</h3>
+                                    <h3 className='launch-h3'>Used</h3>
                                 </div>
                                 <div class="used-fl">
                                     <div class="slider_card">
@@ -67,7 +67,7 @@ const AppStoreScreen = () => {
                                             </div>
                                         </div>
                                         <div class="bottom_section">
-                                            <h3>Akool Marketplace</h3>
+                                            <h3 className='launch-h3'>Akool Marketplace</h3>
                                             <div class="rating_section d-flex align-items-baseline">
                                                 <h5 class="mb-0">5.0</h5>
                                                 <div class="star_section">
@@ -91,7 +91,7 @@ const AppStoreScreen = () => {
                                             </div>
                                         </div>
                                         <div class="bottom_section">
-                                            <h3>Akool Marketplace</h3>
+                                            <h3 className='launch-h3'>Akool Marketplace</h3>
                                             <div class="rating_section d-flex align-items-baseline">
                                                 <h5 class="mb-0">5.0</h5>
                                                 <div class="star_section">
@@ -113,7 +113,7 @@ const AppStoreScreen = () => {
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="heading_text">
-                                                <h3>Recommended Apps</h3>
+                                                <h3 className='launch-h3'>Recommended Apps</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@ const AppStoreScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div class="bottom_section">
-                                                        <h3>Akool Marketplace</h3>
+                                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                             dolore eu fugiat.</p>
                                                         <div class="rating_section d-flex align-items-baseline">
@@ -159,7 +159,7 @@ const AppStoreScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div class="bottom_section">
-                                                        <h3>Akool Marketplace</h3>
+                                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                             dolore eu fugiat.</p>
                                                         <div class="rating_section d-flex align-items-baseline">
@@ -185,7 +185,7 @@ const AppStoreScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div class="bottom_section">
-                                                        <h3>Akool Marketplace</h3>
+                                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                             dolore eu fugiat.</p>
                                                         <div class="rating_section d-flex align-items-baseline">
@@ -211,7 +211,7 @@ const AppStoreScreen = () => {
                                                         </div>
                                                     </div>
                                                     <div class="bottom_section">
-                                                        <h3>Akool Marketplace</h3>
+                                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                             dolore eu fugiat.</p>
                                                         <div class="rating_section d-flex align-items-baseline">
@@ -239,7 +239,7 @@ const AppStoreScreen = () => {
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="heading_text">
-                                                <h3>All Apps</h3>
+                                                <h3 className='launch-h3'>All Apps</h3>
                                             </div>
                                         </div>
                                     </div>
@@ -283,7 +283,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -311,7 +311,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -339,7 +339,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -367,7 +367,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -395,7 +395,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -423,7 +423,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -451,7 +451,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -479,7 +479,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -507,7 +507,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -537,7 +537,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -565,7 +565,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">
@@ -593,7 +593,7 @@ const AppStoreScreen = () => {
                                                     </div>
                                                 </div>
                                                 <div class="bottom_section">
-                                                    <h3>Akool Marketplace</h3>
+                                                    <h3 className='launch-h3'>Akool Marketplace</h3>
                                                     <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                                                         dolore eu fugiat.</p>
                                                     <div class="rating_section d-flex align-items-baseline">

@@ -1,7 +1,7 @@
 import React from 'react'
 import Carousel from '../Components/Carousel'
 
-const AllAppsScreen = () => {
+const AppsScreen = () => {
     return (
         <>
             <section className="banner_two launch_banner_two">
@@ -492,4 +492,4 @@ const AllAppsScreen = () => {
     )
 }
 
-export default AllAppsScreen
+export default AppsScreen
