@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Carousel from '../Components/Carousel'
-import Navbar from '../Components/Navbar'
+import { Helmet } from "react-helmet";
 
 const AppIntroScreen = () => {
     const initialValue = {
@@ -17,7 +17,9 @@ const AppIntroScreen = () => {
 
     return (
         <>
-            <Navbar hideNavItems />
+            <Helmet>
+                <link rel='stylesheet' href='../assets/css/app.intro.css' />
+            </Helmet>
             <section className="banner_two">
                 <div className="container banner_container">
                     <div className="row">
@@ -45,11 +47,10 @@ const AppIntroScreen = () => {
                         </div>
 
                         <div className="banner_content_image">
-                            <img src="images/app_intro_content.png" alt=" app intro" className="img-fluid w-100" />
+                            <img src="/images/app_intro_content.png" alt=" app intro" className="img-fluid w-100" />
                         </div>
                     </div>
                 </div>
-
             </section>
 
             <section className="app_about_section">
@@ -80,7 +81,7 @@ const AppIntroScreen = () => {
                                 </p>
                             </div>
                             <div className="about_image_part">
-                                <img src="images/app_intro_about.png" alt="about" className="img-fluid" />
+                                <img src="/images/app_intro_about.png" alt="about" className="img-fluid" />
                             </div>
 
                         </div>
@@ -93,7 +94,7 @@ const AppIntroScreen = () => {
                         <div className="row">
                             <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
                                 <div className="about_image_part">
-                                    <img src="images/about_section_two.png" alt="about" className="img-fluid" />
+                                    <img src="/images/about_section_two.png" alt="about" className="img-fluid" />
                                 </div>
                                 <div className="about_text_part">
                                     <h3>What's our main goal?</h3>
@@ -133,7 +134,6 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <Carousel />
-
                         </div>
                     </div>
                 </div>
@@ -229,7 +229,7 @@ const AppIntroScreen = () => {
                 <div className="col-lg-4">
                     <div className="feature_card d-flex align-items-start">
                         <div className="image_section">
-                            <img src="images/feature_card_image.png" alt="feature">
+                            <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
                             <h3>Feature 1</h3>
@@ -240,7 +240,7 @@ const AppIntroScreen = () => {
                 <div className="col-lg-4">
                     <div className="feature_card d-flex align-items-start">
                         <div className="image_section">
-                            <img src="images/feature_card_image.png" alt="feature">
+                            <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
                             <h3>Feature 1</h3>
@@ -251,7 +251,7 @@ const AppIntroScreen = () => {
                 <div className="col-lg-4">
                     <div className="feature_card d-flex align-items-start">
                         <div className="image_section">
-                            <img src="images/feature_card_image.png" alt="feature">
+                            <img src="/images/feature_card_image.png" alt="feature">
                         </div>
                         <div className="text_section">
                             <h3>Feature 1</h3>
@@ -268,7 +268,7 @@ const AppIntroScreen = () => {
                         <div className="feature_cards">
                             <div className="feature_card d-flex align-items-start">
                                 <div className="image_section">
-                                    <img src="images/app_intro_feature.png" alt="feature" />
+                                    <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
                                     <h3>Feature 1</h3>
@@ -277,7 +277,7 @@ const AppIntroScreen = () => {
                             </div>
                             <div className="feature_card d-flex align-items-start ml-22">
                                 <div className="image_section">
-                                    <img src="images/app_intro_feature.png" alt="feature" />
+                                    <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
                                     <h3>Feature 1</h3>
@@ -286,7 +286,7 @@ const AppIntroScreen = () => {
                             </div>
                             <div className="feature_card d-flex align-items-start ml-22">
                                 <div className="image_section">
-                                    <img src="images/app_intro_feature.png" alt="feature" />
+                                    <img src="/images/app_intro_feature.png" alt="feature" />
                                 </div>
                                 <div className="text_section">
                                     <h3>Feature 1</h3>

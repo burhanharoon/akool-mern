@@ -1,18 +1,15 @@
 import React from 'react'
-import Navbar from '../Components/Navbar'
-import '../assets/css/launch.css'
 import Carousel from '../Components/Carousel'
 
 const AllAppsScreen = () => {
     return (
         <>
-            <Navbar hideNavItems />
             <section className="banner_two launch_banner_two">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 m-auto">
                             <div className="banner_text text-center">
-                                <h3>Build With Akool</h3>
+                                <h3 className='launch-h3'>Build With Akool</h3>
                             </div>
                         </div>
                     </div>
@@ -27,7 +24,7 @@ const AllAppsScreen = () => {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="heading_text">
-                                    <h3>Recommended Apps</h3>
+                                    <h3 className='launch-h3'>Recommended Apps</h3>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +44,7 @@ const AllAppsScreen = () => {
                         <div className="row">
                             <div className="col-lg-6">
                                 <div className="heading_text">
-                                    <h3>All Apps</h3>
+                                    <h3 className='launch-h3'>All Apps</h3>
                                 </div>
                             </div>
                         </div>
@@ -68,14 +65,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -95,14 +92,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -122,14 +119,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -149,14 +146,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -176,14 +173,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -203,14 +200,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -230,14 +227,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -257,14 +254,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -284,14 +281,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -313,14 +310,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -340,14 +337,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -367,14 +364,14 @@ const AllAppsScreen = () => {
                                 <div className="slider_card">
                                     <div className="top_section">
                                         <div className="image_section">
-                                            <img src="images/slider_image.png" alt="slider" />
+                                            <img src="/images/slider_image.png" alt="slider" />
                                         </div>
                                         <div className="heart_icon_section">
                                             <i className="fa fa-heart"></i>
                                         </div>
                                     </div>
                                     <div className="bottom_section">
-                                        <h3>Akool Marketplace</h3>
+                                        <h3 className='launch-h3'>Akool Marketplace</h3>
                                         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
                                         <div className="rating_section d-flex align-items-baseline">
                                             <h5 className="mb-0">5.0</h5>
@@ -393,7 +390,7 @@ const AllAppsScreen = () => {
                         </div>
                         <div className="row">
                             <div className="see_more_btn text-center">
-                                <a href="true" className="view_more_slider_card">View More <img src="images/slider_right_arrow.png" alt="alider arrow" /></a>
+                                <a href="true" className="view_more_slider_card">View More <img src="/images/slider_right_arrow.png" alt="alider arrow" /></a>
                             </div>
                         </div>
                     </div>
@@ -403,10 +400,10 @@ const AllAppsScreen = () => {
             {/* Recommended Apps slider part end  */}
             <section className="last_part d-flex">
                 <div className="image_section">
-                    <img src="images/lunch_last.png" alt="lunch" className="img-fluid w-100 h-100" />
+                    <img src="/images/lunch_last.png" alt="lunch" className="img-fluid w-100 h-100" />
                 </div>
                 <div className="last_text_part">
-                    <h3>Build With Akool</h3>
+                    <h3 className='launch-h3'>Build With Akool</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                     <div className="buttons d-flex">
                         <a href="true">Register</a>
@@ -422,7 +419,7 @@ const AllAppsScreen = () => {
                             <div className="footer_content_section">
                                 <div className="footer_logo">
                                     <a href="true">
-                                        <img src="images/footer_logo.png" alt="footer logo" />
+                                        <img src="/images/footer_logo.png" alt="footer logo" />
                                     </a>
                                 </div>
                                 <div className="footer_nav_section">

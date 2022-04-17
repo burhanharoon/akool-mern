@@ -9,15 +9,15 @@ const Carousel = () => {
             className="slider_section top_selected_apps_slider owl-carousel"
             margin={30} responsiveClass={true} nav={true} dots={false} autoplay={false}
             navText={[
-                `<div><img src="images/slider_prev_arrow.png" alt="previous"/></div>`,
-                `<div><img src="images/slider_right_arrow.png" alt="next"/></div>`]}
+                `<div><img src="/images/slider_prev_arrow.png" alt="previous"/></div>`,
+                `<div><img src="/images/slider_right_arrow.png" alt="next"/></div>`]}
             responsive={{ 0: { items: 1, }, 700: { items: 3, }, }}
         >
 
             <div className="slider_card first_slider_card">
                 <div className="top_section">
                     <div className="image_section">
-                        <img src="images/slider_image.png" alt="slider" />
+                        <img src="/images/slider_image.png" alt="slider" />
                     </div>
                     <div className="heart_icon_section">
                         <i className="fa fa-heart"></i>
@@ -43,7 +43,7 @@ const Carousel = () => {
             <div className="slider_card first_slider_card">
                 <div className="top_section">
                     <div className="image_section">
-                        <img src="images/slider_image.png" alt="slider" />
+                        <img src="/images/slider_image.png" alt="slider" />
                     </div>
                     <div className="heart_icon_section">
                         <i className="fa fa-heart"></i>
@@ -68,7 +68,7 @@ const Carousel = () => {
             <div className="slider_card first_slider_card">
                 <div className="top_section">
                     <div className="image_section">
-                        <img src="images/slider_image.png" alt="slider" />
+                        <img src="/images/slider_image.png" alt="slider" />
                     </div>
                     <div className="heart_icon_section">
                         <i className="fa fa-heart"></i>
@@ -94,7 +94,7 @@ const Carousel = () => {
             <div className="slider_card first_slider_card">
                 <div className="top_section">
                     <div className="image_section">
-                        <img src="images/slider_image.png" alt="slider" />
+                        <img src="/images/slider_image.png" alt="slider" />
                     </div>
                     <div className="heart_icon_section">
                         <i className="fa fa-heart"></i>
