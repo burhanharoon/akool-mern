@@ -26,7 +26,7 @@ const Navbar = ({ hideNavItems }) => {
                                     <a className="nav-link nav_btn one" href='true'>Register</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link nav_btn two" href='true'>Login</a>
+                                    <Link className="nav-link nav_btn two" to='/login'>Login</Link>
                                 </li>
                             </ul> :
                             <ul className="navbar-nav ms-auto">
@@ -46,7 +46,7 @@ const Navbar = ({ hideNavItems }) => {
                                     <a className="nav-link nav_btn one" href='true'>Register</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link nav_btn two" href='true'>Login</a>
+                                    <Link className="nav-link nav_btn two" to='login'>Login</Link>
                                 </li>
                             </ul>}
                     </div>

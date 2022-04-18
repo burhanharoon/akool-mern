@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Carousel from '../Components/Carousel'
+
 
 const AppsScreen = () => {
     return (
@@ -62,31 +64,32 @@ const AppsScreen = () => {
 
                         <div className="row">
                             <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
+                                <Link to={'/apps/1'}>
+                                    <div className="slider_card">
+                                        <div className="top_section">
+                                            <div className="image_section">
+                                                <img src="/images/slider_image.png" alt="slider" />
+                                            </div>
+                                            <div className="heart_icon_section">
+                                                <i className="fa fa-heart"></i>
+                                            </div>
                                         </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                        <div className="bottom_section">
+                                            <h3 className='launch-h3'>Akool Marketplace</h3>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                            <div className="rating_section d-flex align-items-baseline">
+                                                <h5 className="mb-0">5.0</h5>
+                                                <div className="star_section">
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
+                                </Link>
                             </div>
                             <div className="col-lg-4 col-md-6">
                                 <div className="slider_card">
@@ -143,31 +146,32 @@ const AppsScreen = () => {
                                 </div>
                             </div>
                             <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
+                                <Link to={'/apps/1'}>
+                                    <div className="slider_card">
+                                        <div className="top_section">
+                                            <div className="image_section">
+                                                <img src="/images/slider_image.png" alt="slider" />
+                                            </div>
+                                            <div className="heart_icon_section">
+                                                <i className="fa fa-heart"></i>
+                                            </div>
                                         </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                        <div className="bottom_section">
+                                            <h3 className='launch-h3'>Akool Marketplace</h3>
+                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+                                            <div className="rating_section d-flex align-items-baseline">
+                                                <h5 className="mb-0">5.0</h5>
+                                                <div className="star_section">
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-
-                                </div>
+                                </Link>
                             </div>
                             <div className="col-lg-4 col-md-6">
                                 <div className="slider_card">

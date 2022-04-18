@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const AppStoreScreen = () => {
     const [showNav, setShowNav] = useState(false)
@@ -8,7 +9,7 @@ const AppStoreScreen = () => {
                 <div class="dash-fl">
                     <div class="dash-left">
                         <div class="dash-logo">
-                            <a title="footer logo" href="true"><img src="/images/footer_logo.png" alt="footer logo" /></a>
+                            <Link title="footer logo" to='/'><img src="/images/footer_logo.png" alt="footer logo" /></Link>
                         </div>
                         <div class="dash-menu">
                             <ul>
@@ -26,7 +27,7 @@ const AppStoreScreen = () => {
                             <div class={showNav ? "offcanvas offcanvas-start col-md-block show" : "offcanvas offcanvas-start col-md-block"} style={showNav ? { visibility: "visible" } : { visibility: "hidden" }} >
                                 <div class="offcanvas-header">
                                     <div class="dash-logo">
-                                        <a href="true"><img src="/images/footer_logo.png" alt="" /></a>
+                                        <Link to={'/'}><img src="/images/footer_logo.png" alt="" /></Link>
                                     </div>
                                     <button type="button" class="btn-close text-reset" onClick={() => { setShowNav(false) }}
                                         aria-label="Close"></button>

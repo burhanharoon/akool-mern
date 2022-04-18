@@ -21,11 +21,14 @@ function App() {
           <Route index element={<HomeScreen />} />
         </Route>
         <Route path='/apps' element={<Navbar hideNavItems />}>
-          <Route path=':id' element={<AppIntroScreen />} />
           <Route index element={<AppsScreen />} />
+          <Route path=':id' element={<AppIntroScreen />} />
+        </Route>
+        <Route path='/login'>
+          <Route index element={<AppStoreScreen />} />
         </Route>
       </Routes>
-      <Route path='/login' element={<AppStoreScreen />} />
+
     </BrowserRouter>
   );
 }
