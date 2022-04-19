@@ -15,11 +15,12 @@ import LoginScreen from './Screens/LoginScreen';
 
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Navbar />} >
-          <Route index element={<HomeScreen />} />
+        <Route path='/'>
+          <Route index element={localStorage.getItem('token') ? <AppStoreScreen /> : <HomeScreen />} />
         </Route>
         <Route path='/apps' element={<Navbar hideNavItems />}>
           <Route index element={<AppsScreen />} />

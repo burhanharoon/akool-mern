@@ -3,9 +3,11 @@ import Carousel from '../Components/Carousel';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Navbar from '../Components/Navbar';
 
 const HomeScreen = () =>
     <div>
+        <Navbar />
         <section id="banner">
             <div className="container">
                 <div className="row">
