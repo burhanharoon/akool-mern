@@ -11,6 +11,7 @@ import AppIntroScreen from './Screens/AppIntroScreen';
 import AppsScreen from './Screens/AppsScreen';
 import Navbar from './Components/Navbar';
 import AppStoreScreen from './Screens/AppStoreScreen';
+import LoginScreen from './Screens/LoginScreen';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
           <Route path=':id' element={<AppIntroScreen />} />
         </Route>
         <Route path='/login'>
-          <Route index element={<AppStoreScreen />} />
+          <Route index element={<LoginScreen />} />
         </Route>
       </Routes>
 
