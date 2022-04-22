@@ -1,8 +1,8 @@
 import './assets/css/bootstrap.min.css'
-// import './assets/css/venobox.min.css'
 import './assets/css/style.css'
 import './assets/css/launch.css'
 import './assets/css/app.intro.css'
+// import './assets/css/responsive.css'
 import './assets/css/media.css'
 import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -26,7 +26,7 @@ function App() {
           <Route index element={<AppsScreen />} />
           <Route path=':id' element={<AppIntroScreen />} />
         </Route>
-        <Route path='/login'>
+        <Route path='/login' element={<Navbar hideNavItems />}>
           <Route index element={<LoginScreen />} />
         </Route>
       </Routes>

@@ -194,19 +194,30 @@
     margin: 0;
   }
 
+  .hero-aera {
+    height: 1370px;
+    padding-top: 193px;
+  }
 
+  .login-form {
+    width: 650px;
+    height: 640px;
+    padding-top: 50px;
+    padding-left: 50px;
+  }
 
-
-
-
-
+  .login-form.reg-frm {
+    padding-top: 40px;
+    height: auto;
+    padding-bottom: 50px;
+  }
 
 }
 
 
 @media (min-width: 992px) and (max-width: 1200px) {
 
-  
+
 
   .collapse.navbar-collapse ul li a {
     margin-right: 10px;
@@ -473,31 +484,108 @@
     max-width: 420px;
     width: 100%;
   }
-  .launch_banner_two .banner_text{
+
+  .launch_banner_two .banner_text {
     padding-left: 0 !important;
   }
 
 
+  .hero-aera {
+    height: 1136px;
+    padding-top: 150px;
+  }
 
 
+  /* company-page-res   */
+  .hero-aera.company-hero {
+    padding-top: 160px;
+  }
 
+  .appli-link img {
+    width: 50px;
+    height: 50px;
+  }
 
+  .hero-aera.company-hero {
+    height: 730px;
+    padding-top: 168px;
+  }
 
+  .hero-aera.pricing-hero {
+    height: 770px;
+    padding-top: 200px;
+  }
+
+  .hero-aera.login-hero {
+    height: 810px;
+    padding-top: 138px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: 900px;
+  }
+
+  .login-title h3 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+
+  /*  login=================  */
+  .login-form {
+    width: 490px;
+    height: auto;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    padding-right: 30px;
+  }
+
+  .login-form.reg-frm {
+    padding-top: 90px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .login-inp {
+    width: 100%;
+  }
+
+  .hero-aera.login-hero {
+    height: 810px;
+    padding-top: 138px;
+  }
+
+  .login-title h3 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: 900px;
+  }
+
+  .login-inp-fx {
+    width: 100%;
+  }
 }
 
 
 
 @media (min-width: 768px) and (max-width: 991px) {
 
-  .navbar-expand-lg  .navbar-nav {
+  .navbar-expand-lg .navbar-nav {
     width: 100%;
     background: #041547;
     align-items: flex-start;
     padding: 20px;
   }
-  .navbar-nav li a{
+
+  .navbar-nav li a {
     margin-left: 5px;
   }
+
   .navbar-nav li a.nav_btn.one {
     margin-left: 0px;
     margin-right: 0px;
@@ -783,84 +871,197 @@
   }
 
   /* launch page start */
-  .launch_banner_two .banner_text{
+  .launch_banner_two .banner_text {
     padding-left: 0 !important;
   }
+
   .last_part .image_section {
     width: 50%;
   }
-  .last_part .image_section img{
+
+  .last_part .image_section img {
     max-width: 100%;
   }
+
   .last_text_part {
     width: 50%;
     padding-left: 50px;
     padding-top: 50px;
   }
+
   .last_text_part h3 {
     font-size: 40px;
   }
+
   /* dash page */
   .dash-logo {
     height: auto;
   }
-  .offcanvas-body{
+
+  .offcanvas-body {
     padding-left: 0;
   }
+
   .dash-menu {
     max-width: 300px;
     width: 100%;
   }
-  .dash-menu ul li{
+
+  .dash-menu ul li {
     padding-left: 115px;
     padding-right: 80px;
   }
+
   .dash-menu li.acctive::before {
     width: 100%;
   }
+
   .dash-right {
     width: 100%;
   }
-  .dash-left{
+
+  .dash-left {
     display: none;
   }
-  .dash-right-btn i{
+
+  .dash-right-btn i {
     color: #FFF;
     font-size: 24px;
 
   }
-  .col-md-block{
+
+  .col-md-block {
     display: block;
   }
+
   .used-area {
     padding-left: 0px !important;
   }
+
   .used-fl {
     width: 97%;
   }
 
+  .hero-aera {
+    height: 1050px;
+    padding-top: 150px;
+  }
 
+  /* company-page-res   */
+  .hero-aera.company-hero {
+    padding-top: 160px;
+  }
 
+  .hero-aera.company-hero {
+    height: 616px;
+    padding-top: 168px;
+  }
 
+  .hero-aera.pricing-hero {
+    height: 631px;
+    padding-top: 150px;
+  }
+
+  .hero-aera.login-hero {
+    height: auto;
+    padding-top: 138px;
+    padding-bottom: 50px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-wrap {
+    text-align: center;
+  }
+
+  .login-title h3 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+
+  .login-single-box {
+    max-width: 460px;
+    margin-bottom: 54px !important;
+    margin: auto;
+  }
+
+  /*  login=================  */
+  .login-form {
+    width: 90%;
+    height: auto;
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-bottom: 50px;
+    padding-right: 30px;
+    position: unset;
+    margin-top: 30px !important;
+    margin: auto;
+  }
+
+  .login-form.reg-frm {
+    padding-top: 90px;
+    height: auto;
+    padding-bottom: 50px;
+  }
+
+  .login-inp {
+    width: 100%;
+  }
+
+  .hero-aera.login-hero {
+    height: auto;
+    padding-top: 138px;
+    padding-bottom: 50px;
+  }
+
+  .login-title h3 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 18px;
+  }
+
+  .login-wrap {
+    text-align: center;
+  }
+
+  .login-single-box {
+    max-width: 460px;
+    margin-bottom: 54px !important;
+    margin: auto;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-inp-fx {
+    width: 100%;
+  }
 }
 
 
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
-  .navbar-brand img{
+  .navbar-brand img {
     width: 150px;
     height: auto;
   }
-  .navbar-nav li a{
+
+  .navbar-nav li a {
     margin-left: 5px;
     text-align: center;
     margin: 0 !important;
     margin-bottom: 10px !important;
   }
-.navbar-expand-lg .navbar-nav li {
-  display: block;
-  width: 100%;
-}
+
+  .navbar-expand-lg .navbar-nav li {
+    display: block;
+    width: 100%;
+  }
+
   .navbar-nav li a.nav_btn {
     padding: 14px 40px !important;
     border-radius: 10px;
@@ -869,12 +1070,14 @@
     justify-content: center;
     margin-bottom: 20px !important;
   }
-  .navbar-expand-lg  .navbar-nav {
+
+  .navbar-expand-lg .navbar-nav {
     width: 100%;
     background: #041547;
     align-items: flex-start;
     padding: 20px;
   }
+
   .navbar-nav li a.nav_btn.one {
     margin-left: 0px;
     margin-right: 0px;
@@ -884,9 +1087,11 @@
     align-items: center;
     justify-content: center;
   }
-  .col-md-block{
+
+  .col-md-block {
     display: block;
   }
+
   #banner {
     position: relative;
     padding-top: 150px;
@@ -952,7 +1157,8 @@
     padding-bottom: 20px;
     padding-left: 27px;
   }
-  .use_case_card .image_section img{
+
+  .use_case_card .image_section img {
     width: 80px;
   }
 
@@ -1026,7 +1232,8 @@
     line-height: 26px;
     text-align: center;
   }
-  .single_text h3{
+
+  .single_text h3 {
     padding-left: 10px;
   }
 
@@ -1044,6 +1251,7 @@
     margin-bottom: 20px;
     padding-bottom: 0;
   }
+
   .feature_card .text_section p {
     font-size: 14px;
     line-height: 24px;
@@ -1065,9 +1273,11 @@
   #customer_stories_section .heading_text h3 {
     font-size: 30px;
   }
+
   .video_image_section {
     display: block;
   }
+
   .customer_stories_slider_card {
     flex-direction: column;
 
@@ -1121,9 +1331,11 @@
   .footer_page_links {
     padding-top: 50px;
   }
-.footer_page_links ul li a {
-	font-size: 14px;
-}
+
+  .footer_page_links ul li a {
+    font-size: 14px;
+  }
+
   .footer_register_btn a {
     margin-top: 40px;
     margin-left: 0;
@@ -1139,11 +1351,11 @@
     text-align: center;
   }
 
-.footer_logo img {
-	max-width: 228px;
-	width: 100%;
-	height: auto;
-}
+  .footer_logo img {
+    max-width: 228px;
+    width: 100%;
+    height: auto;
+  }
 
   .banner_content_image {
     position: relative;
@@ -1209,23 +1421,28 @@
     max-width: 420px;
     width: 100%;
   }
+
   /* launch page*/
-  .last_part.d-flex{
+  .last_part.d-flex {
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   .last_part .image_section {
     width: 100%;
   }
+
   .last_text_part {
     width: 100%;
     padding-left: 10px;
     padding-top: 50px;
     padding-bottom: 50px;
   }
+
   .last_text_part h3 {
     font-size: 38px;
   }
+
   .last_text_part p {
     font-size: 15px;
     font-weight: 400;
@@ -1233,61 +1450,78 @@
     padding-bottom: 15px;
     padding-top: 25px;
   }
+
   /* dash page */
   .store-baner {
     padding: 0 20px;
   }
+
   .store-baner h3 {
     font-size: 30px;
   }
+
   .used-area {
     padding-left: 0px !important;
     padding-right: 10px;
   }
+
   .used-fl {
     flex-direction: column;
   }
+
   .used-fl .slider_card {
     width: 100%;
     margin-bottom: 20px;
   }
-  .recommendtion_part .heading_text h3, .all_apps_part .heading_text h3 {
+
+  .recommendtion_part .heading_text h3,
+  .all_apps_part .heading_text h3 {
     font-size: 28px;
   }
+
   .used-fl {
     width: 97%;
   }
-  .dash-left{
+
+  .dash-left {
     display: none;
   }
+
   .dash-logo {
     height: auto;
   }
-  .offcanvas-body{
+
+  .offcanvas-body {
     padding-left: 0;
   }
+
   .dash-menu {
     max-width: 300px;
     width: 100%;
   }
-  .dash-menu ul li{
+
+  .dash-menu ul li {
     padding-left: 115px;
     padding-right: 80px;
   }
+
   .dash-menu li.acctive::before {
     width: 100%;
   }
+
   .dash-right {
     width: 100%;
   }
+
   /* .dash-left{
     display: none;
   } */
-  .dash-right-btn i{
+  .dash-right-btn i {
     color: #FFF;
     font-size: 24px;
 
   }
+
   /* .col-md-block{
     display: block;
   } */
@@ -1300,18 +1534,113 @@
   .all_apps_nav input {
     width: 46%;
   }
+
   .all_apps_nav .category__button {
     width: 54%;
     padding-left: 0px;
   }
+
   .category__button ul {
     padding-left: 1rem;
   }
+
   .category__button button {
     margin-left: 10px;
   }
+
   .category__button ul li a i {
     margin-left: 10px;
+  }
+
+  /*  login=================  */
+  .login-form {
+    width: 96%;
+    height: auto;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    position: unset;
+    margin-top: 16px !important;
+    margin: auto;
+  }
+
+  .login-form.reg-frm {
+    padding-top: 25px;
+    height: auto;
+    padding-bottom: 31px;
+  }
+
+  .login-inp {
+    width: 100%;
+  }
+
+  .hero-aera.login-hero {
+    height: auto;
+    padding-top: 111px;
+    padding-bottom: 50px;
+  }
+
+  .login-title h3 {
+    font-size: 25px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+
+  .login-wrap {
+    text-align: center;
+  }
+
+  .login-single-box {
+    max-width: 460px;
+    margin-bottom: 54px !important;
+    margin: auto;
+  }
+
+  .login-icon a {
+    width: 75px;
+    height: 75px;
+  }
+
+  .login-form-title h4 {
+    font-size: 25px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .login-inp input {
+    height: 50px;
+  }
+
+  .log-bt button {
+    width: 160px;
+    height: 55px;
+  }
+
+  .log-btn p {
+    font-size: 14px;
+  }
+
+  .log-btn a {
+    width: 118px;
+    height: 48px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-inp-fx {
+    width: 100%;
+    display: block;
+  }
+
+  .lg-si-ip {
+    width: 100%;
+  }
+
+  .lg-si-ip input {
+    height: 50px;
   }
 
 }
@@ -1320,11 +1649,213 @@
   .all_apps_nav input {
     width: 40%;
   }
+
   .all_apps_nav .category__button {
     width: 60%;
     padding-left: 20px;
   }
+
   .banner_text h3 {
     font-size: 35px;
   }
+
+  .hero-aera {
+    height: auto;
+    padding-top: 139px;
+    padding-bottom: 370px;
+  }
+
+  /* company-page-res   */
+  .hero-aera.company-hero {
+    padding-top: 160px;
+  }
+
+  .hero-aera.company-hero {
+    height: auto;
+    padding-top: 120px;
+    padding-bottom: 77px;
+    background-size: 90% 56%;
+    background-repeat: no-repeat;
+    background-color: #000000;
+  }
+
+  .hero-aera.pricing-hero {
+    height: auto;
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+
+  .hero-aera.login-hero {
+    height: auto;
+    padding-top: 111px;
+    padding-bottom: 50px;
+  }
+
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-wrap {
+    text-align: center;
+  }
+
+  .login-title h3 {
+    font-size: 25px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+
+  .login-single-box {
+    max-width: 460px;
+    margin-bottom: 54px !important;
+    margin: auto;
+  }
+
+
+
+
+
+
+  .login-icon a {
+    width: 75px;
+    height: 75px;
+  }
+
+  .login-form-title h4 {
+    font-size: 25px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .login-inp input {
+    height: 50px;
+  }
+
+  .log-bt button {
+    width: 160px;
+    height: 55px;
+  }
+
+  .log-btn p {
+    font-size: 14px;
+  }
+
+  .log-btn a {
+    width: 118px;
+    height: 48px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-inp-fx {
+    width: 100%;
+    display: block;
+  }
+
+  .lg-si-ip {
+    width: 100%;
+  }
+
+  .lg-si-ip input {
+    height: 50px;
+  }
+
+  /*  login=================  */
+  .login-form {
+    width: 96%;
+    height: auto;
+    padding-top: 25px;
+    padding-left: 25px;
+    padding-bottom: 25px;
+    padding-right: 25px;
+    position: unset;
+    margin-top: 16px !important;
+    margin: auto;
+  }
+
+  .login-form.reg-frm {
+    padding-top: 25px;
+    height: auto;
+    padding-bottom: 31px;
+  }
+
+  .login-inp {
+    width: 100%;
+  }
+
+  .hero-aera.login-hero {
+    height: auto;
+    padding-top: 111px;
+    padding-bottom: 50px;
+  }
+
+  .login-title h3 {
+    font-size: 25px;
+    line-height: 36px;
+    margin-bottom: 8px;
+  }
+
+  .login-wrap {
+    text-align: center;
+  }
+
+  .login-single-box {
+    max-width: 460px;
+    margin-bottom: 54px !important;
+    margin: auto;
+  }
+
+  .login-icon a {
+    width: 75px;
+    height: 75px;
+  }
+
+  .login-form-title h4 {
+    font-size: 25px;
+    line-height: 40px;
+    margin-bottom: 30px;
+  }
+
+  .login-inp input {
+    height: 50px;
+  }
+
+  .log-bt button {
+    width: 160px;
+    height: 55px;
+  }
+
+  .log-btn p {
+    font-size: 14px;
+  }
+
+  .log-btn a {
+    width: 118px;
+    height: 48px;
+  }
+
+  .hero-aera.login-hero.reg-hero {
+    height: auto;
+  }
+
+  .login-inp-fx {
+    width: 100%;
+    display: block;
+  }
+
+  .lg-si-ip {
+    width: 100%;
+  }
+
+  .lg-si-ip input {
+    height: 50px;
+  }
+
+
+
+
+
 }
