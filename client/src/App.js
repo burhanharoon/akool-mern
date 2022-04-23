@@ -14,17 +14,14 @@ import LoginScreen from './Screens/LoginScreen';
 import { useSelector } from 'react-redux'
 
 const App = () => {
-  const userDetails = useSelector(state => state.userInfo)
-  console.log(userDetails)
+  const userLoggedIn = useSelector(state => state.userInfo)
+  // console.log(userDetails)
   return (
     <BrowserRouter>
       <Routes>
         <Route path='/'>
-          <Route index element={<AppStoreScreen />} />
+          <Route index element={userLoggedIn ? <AppStoreScreen /> : <HomeScreen />} />
         </Route>
-        {/* <Route path='/'>
-          <Route index element={localStorage.getItem('token') ? <AppStoreScreen /> : <HomeScreen />} />
-        </Route> */}
         <Route path='/apps' element={<Navbar hideNavItems />}>
           <Route index element={<AppsScreen />} />
           <Route path=':id' element={<AppIntroScreen />} />

@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { logoutUser } from '../actions/userActions'
+import { useSelector, useDispatch } from 'react-redux'
 
 
 const AppStoreScreen = () => {
+    const dispatch = useDispatch()
     const [showNav, setShowNav] = useState(false)
-    const userDetails = useSelector(state => state.userInfo)
+    const [showNavDropdown, setShowNavDropdown] = useState(false)
+    const user = useSelector(state => state.userInfo)
+    const handleLogout = () => {
+        dispatch(logoutUser())
+        // console.log(user);
+    }
 
     return (
         <>
@@ -23,7 +30,7 @@ const AppStoreScreen = () => {
                         </div>
                     </div>
                     <div className="dash-right">
-                        <div className="store-baner" style={{ backgroundImage: "url('images/app_intro_bg.png')" }}>
+                        <div className="store-baner gap-4" style={{ backgroundImage: "url('images/app_intro_bg.png')" }}>
                             <div title="nav_icon" onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className="dash-right-btn col-md-block" data-bs-toggle="offcanvas"
                                 role="button" aria-controls="offcanvasExample">
                                 <i className="fa fa-bars" aria-hidden="true"></i>
@@ -49,16 +56,20 @@ const AppStoreScreen = () => {
 
                                 </div>
                             </div>
-                            <h3 className='launch-h3'>App Store</h3>
-                            <a title="nav_icon" href="true" className='d-flex align-items-center gap-2 '>
-                                <img src="/images/man.png" alt="" />
-                                <div className='text-white'>
-                                    <p className='text-white mb-2'>Burhan Haroon</p>
-                                    <p className='text-white mb-0'>Burhan Haroon</p>
-
+                            <h3 className='launch-h3 w-100'>App Store</h3>
+                            <div className='d-flex align-items-center justify-content-end gap-2 position-relative'>
+                                <img className='w-75 w-sm-100' src="/images/man.png" alt="" />
+                                <div className='text-white d-none d-sm-block fw-bold fs-6'>
+                                    <p className='text-white mb-2'>{user.name}</p>
+                                    <p className='text-white mb-2'>{user.email}</p>
+                                    <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
                                 </div>
-                                <span><i className="fa fa-chevron-down" aria-hidden="true" style={{ color: "#fff;" }}></i></span>
-                            </a>
+                                <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
+                                <div className={showNavDropdown ? 'position-absolute end-0 bg-light p-2 rounded shadow d-sm-none' : 'position-absolute end-0 bg-light p-2 rounded d-none'} style={{ top: "4rem" }}>
+                                    <p className='mb-2'>{user.name}</p>
+                                    <p className='mb-0'>{user.email}</p>
+                                </div>
+                            </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
                         <div className="used-area">

@@ -1,4 +1,4 @@
-import { USER_INFO_SUCCESS } from '../constants/userConstants'
+import { USER_INFO_SUCCESS, USER_LOGOUT_SUCCESS } from '../constants/userConstants'
 
 export const saveUserInfo = (data) => async (dispatch) => {
     const { email, firstName, lastName, _id } = data
@@ -8,9 +8,14 @@ export const saveUserInfo = (data) => async (dispatch) => {
         name: firstName + ' ' + lastName
     }
     localStorage.setItem('user', JSON.stringify(temp))
-    console.log(JSON.parse(localStorage.getItem('user')));
     dispatch({
         type: USER_INFO_SUCCESS,
         payload: temp
+    })
+}
+export const logoutUser = () => async (dispatch) => {
+    localStorage.removeItem('user')
+    dispatch({
+        type: USER_LOGOUT_SUCCESS,
     })
 }
