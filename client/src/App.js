@@ -11,10 +11,11 @@ import AppsScreen from './Screens/AppsScreen';
 import Navbar from './Components/Navbar';
 import AppStoreScreen from './Screens/AppStoreScreen';
 import LoginScreen from './Screens/LoginScreen';
+import { useSelector } from 'react-redux'
 
-
-function App() {
-
+const App = () => {
+  const userDetails = useSelector(state => state.userInfo)
+  console.log(userDetails)
   return (
     <BrowserRouter>
       <Routes>

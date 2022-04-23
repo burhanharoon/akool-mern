@@ -6,8 +6,6 @@ import { useSelector } from 'react-redux'
 const AppStoreScreen = () => {
     const [showNav, setShowNav] = useState(false)
     const userDetails = useSelector(state => state.userInfo)
-    // const { error, loading, product } = userDetails
-    console.log(userDetails);
 
     return (
         <>

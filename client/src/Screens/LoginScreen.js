@@ -21,7 +21,6 @@ const LoginScreen = () => {
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
                 dispatch(saveUserInfo(data.user))
-                // console.log(data);
             })
             .catch(err => console.log(err))
     }
