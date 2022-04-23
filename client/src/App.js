@@ -15,7 +15,6 @@ import { useSelector } from 'react-redux'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
-  // console.log(userDetails)
   return (
     <BrowserRouter>
       <Routes>

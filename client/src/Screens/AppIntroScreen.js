@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from '../Components/Carousel'
 
 const AppIntroScreen = () => {
@@ -13,7 +13,9 @@ const AppIntroScreen = () => {
     }
 
     const [faq, setFaq] = useState(initialValue)
-
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [])
     return (
         <>
             <section className="banner_two">
