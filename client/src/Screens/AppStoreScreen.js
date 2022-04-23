@@ -1,8 +1,14 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux'
+
 
 const AppStoreScreen = () => {
     const [showNav, setShowNav] = useState(false)
+    const userDetails = useSelector(state => state.userInfo)
+    // const { error, loading, product } = userDetails
+    console.log(userDetails);
+
     return (
         <>
             <div className="dash-area">
@@ -46,8 +52,13 @@ const AppStoreScreen = () => {
                                 </div>
                             </div>
                             <h3 className='launch-h3'>App Store</h3>
-                            <a title="nav_icon" href="true">
+                            <a title="nav_icon" href="true" className='d-flex align-items-center gap-2 '>
                                 <img src="/images/man.png" alt="" />
+                                <div className='text-white'>
+                                    <p className='text-white mb-2'>Burhan Haroon</p>
+                                    <p className='text-white mb-0'>Burhan Haroon</p>
+
+                                </div>
                                 <span><i className="fa fa-chevron-down" aria-hidden="true" style={{ color: "#fff;" }}></i></span>
                             </a>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>

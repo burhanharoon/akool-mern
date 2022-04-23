@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import UserProfile from '../UserProfile'
 import { Navigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { saveUserInfo } from '../actions/userActions'
 
 
 const LoginScreen = () => {
+
+    const dispatch = useDispatch()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -15,19 +18,15 @@ const LoginScreen = () => {
             email,
             password
         }
-        axios.post('https://api.akool.com/api/v1/public/login', data)
-            .then(({ data }) => {
-                localStorage.setItem('token', data.token)
-                const user = {
-                    id: data.user._id,
-                    name: data.user.firstName + ' ' + data.user.lastName,
-                    email: data.user.email
-                }
-                UserProfile.setUserInfo(user)
-                console.log(UserProfile.getUserInfo());
-            })
-            .catch(err => console.log(err))
+        // axios.post('https://api.akool.com/api/v1/public/login', data)
+        //     .then(({ data }) => {
+        //         dispatch(saveUserInfo(data.user))
+        //     })
+        //     .catch(err => console.log(err))
+        dispatch(saveUserInfo(data))
     }
+
+    // If ths user is already logged in then redirect to home screen
     if (localStorage.getItem('token'))
         return <Navigate to='/' />
     return <div className="hero-aera login-hero">
