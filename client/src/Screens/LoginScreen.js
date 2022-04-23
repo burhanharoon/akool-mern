@@ -18,12 +18,12 @@ const LoginScreen = () => {
             email,
             password
         }
-        // axios.post('https://api.akool.com/api/v1/public/login', data)
-        //     .then(({ data }) => {
-        //         dispatch(saveUserInfo(data.user))
-        //     })
-        //     .catch(err => console.log(err))
-        dispatch(saveUserInfo(data))
+        axios.post('https://api.akool.com/api/v1/public/login', data)
+            .then(({ data }) => {
+                dispatch(saveUserInfo(data.user))
+                // console.log(data);
+            })
+            .catch(err => console.log(err))
     }
 
     // If ths user is already logged in then redirect to home screen
