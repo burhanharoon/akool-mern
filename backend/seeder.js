@@ -1,12 +1,10 @@
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
-import Student from './models/studentModel.js'
-import Teacher from './models/teacherModel.js'
-import SubjectAssignment from './models/assignmentModel.js'
+import CreationTool from './models/creationToolModel.js'
+import RecognitionTool from './models/recognitionToolModel.js'
 import connectDB from './config/db.js'
-import students from './data/students.js'
-import teachers from './data/teachers.js'
-import assignments from './data/assignments.js'
+import creationTools from './data/creationTools.js'
+import recognitionTools from './data/recognitionTools.js'
 
 dotenv.config()
 
@@ -14,13 +12,11 @@ connectDB()
 
 const importData = async () => {
     try {
-        await Student.deleteMany()
-        await Teacher.deleteMany()
-        await SubjectAssignment.deleteMany()
+        await CreationTool.deleteMany()
+        await RecognitionTool.deleteMany()
 
-        await Student.insertMany(students)
-        await Teacher.insertMany(teachers)
-        await SubjectAssignment.insertMany(assignments)
+        await CreationTool.insertMany(creationTools)
+        await RecognitionTool.insertMany(recognitionTools)
 
         console.log('Data Imported!')
         process.exit()
@@ -32,9 +28,8 @@ const importData = async () => {
 
 const destroyData = async () => {
     try {
-        await Order.deleteMany()
-        await Product.deleteMany()
-        await User.deleteMany()
+        await CreationTool.deleteMany()
+        await RecognitionTool.deleteMany()
 
         console.log('Data Destroyed!')
         process.exit()
