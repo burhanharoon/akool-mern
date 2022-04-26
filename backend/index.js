@@ -20,10 +20,10 @@ app.use('/api/student', studentRoutes)
 app.use('/api/teacher', teacherRoutes)
 app.use('/api/assignment', assignmentRoutes)
 app.get('/', (req, res) => {
-    res.send("Api is running successfully")
+    res.send("Api is running 🚀")
 })
 
 
-const PORT = process.env.PORT || 6000
+const PORT = process.env.PORT || 5000
 
 app.listen(5000, console.log(`Server running in ${process.env.NODE_ENV} on port ${PORT}`))
