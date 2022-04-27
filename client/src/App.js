@@ -12,15 +12,22 @@ import Navbar from './Components/Navbar';
 import AppStoreScreen from './Screens/AppStoreScreen';
 import LoginScreen from './Screens/LoginScreen';
 import { useSelector } from 'react-redux'
+import CreationTools from './Components/CreationTools'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/'>
-          <Route index element={userLoggedIn ? <AppStoreScreen /> : <HomeScreen />} />
-        </Route>
+        {userLoggedIn ?
+          <Route path='/' element={<AppStoreScreen />}>
+            <Route index element={<CreationTools />} />
+            <Route path='marketplace' element={<CreationTools />} />
+          </Route> :
+          <Route path='/' >
+            <Route index element={<HomeScreen />} />
+          </Route>
+        }
         <Route path='/apps' element={<Navbar hideNavItems />}>
           <Route index element={<AppsScreen />} />
           <Route path=':id' element={<AppIntroScreen />} />
