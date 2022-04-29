@@ -22,8 +22,8 @@ const App = () => {
         {userLoggedIn ?
           <Route path='/' element={<AppStoreScreen />}>
             <Route index element={<CreationTools />} />
-            <Route path='marketplace' element={<CreationTools />} />
-            <Route path='recognition' element={<CreationTools />} />
+            <Route path='marketplace' element={<div>Maketplace</div>} />
+            <Route path='recognition' element={<div>Reocgnition</div>} />
           </Route> :
           <Route path='/' >
             <Route index element={<HomeScreen />} />

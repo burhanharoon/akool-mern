@@ -18,7 +18,6 @@ const AppStoreScreen = () => {
     const [home, setHome] = useState(true)
     const [marketplace, setmarketplace] = useState(false)
     const [recognition, setrecognition] = useState(false)
-    const [path, setpath] = useState('false')
 
     // const decidePathname = () => {
     //     if (path.includes('/recognition')) {

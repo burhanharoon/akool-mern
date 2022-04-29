@@ -1,6 +1,9 @@
 import React from 'react'
+import creationTools from '../creationTools'
+import Tool from './Tool';
 
 const CreationTools = () => {
+    console.log(creationTools);
     return (
         <div className="used-area">
             <div className="container">
@@ -223,7 +226,14 @@ const CreationTools = () => {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-4 col-md-6">
+                        {
+                            creationTools.map(tool => {
+                                return (
+                                    <Tool title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} />
+                                )
+                            })}
+
+                        {/* <div className="col-lg-4 col-md-6">
                             <div className="slider_card">
                                 <div className="top_section">
                                     <div className="image_section">
@@ -560,7 +570,7 @@ const CreationTools = () => {
                                 </div>
 
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="row">
                         <div className="see_more_btn">
