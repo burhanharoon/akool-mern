@@ -1,4 +1,4 @@
-const creationTools = [
+export const creationTools = [
     {
         title: "3D Modelling",
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.',
@@ -45,7 +45,4 @@ const creationTools = [
         logo: '/images/creation/Virtual Try On/logo.png',
         rating: 5
     },
-
 ]
-
-export default creationTools

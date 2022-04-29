@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Tool = ({ title, logo, description, rating, link }) => {
 
@@ -12,7 +11,6 @@ const Tool = ({ title, logo, description, rating, link }) => {
             rating,
             link
         }
-
         if (localStorage.getItem('used')) {
             let usedItems = JSON.parse(localStorage.getItem('used'))
             usedItems.push(items)
