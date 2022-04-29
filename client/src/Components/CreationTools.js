@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import creationTools from '../creationTools'
 import Tool from './Tool';
 
@@ -229,7 +230,7 @@ const CreationTools = () => {
                         {
                             creationTools.map(tool => {
                                 return (
-                                    <Tool title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} />
+                                    <Tool title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool?.link} />
                                 )
                             })}
 
