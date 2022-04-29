@@ -2,9 +2,29 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Tool = ({ title, logo, description, rating, link }) => {
+
+    const addToUsed = () => {
+        const items =
+        {
+            title,
+            logo,
+            description,
+            rating,
+            link
+        }
+
+        if (localStorage.getItem('used')) {
+            let usedItems = JSON.parse(localStorage.getItem('used'))
+            usedItems.push(items)
+            localStorage.setItem('used', JSON.stringify(usedItems))
+        } else {
+            localStorage.setItem('used', JSON.stringify([items]))
+        }
+    }
+
     return (
         <div className="col-lg-4 col-md-6">
-            <a href={link ? link : ''}>
+            <a _target href={link ? link : ''} onClick={addToUsed}>
                 <div className="slider_card">
                     <div className="top_section">
                         <div className="image_section">
