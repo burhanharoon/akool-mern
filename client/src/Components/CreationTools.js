@@ -201,9 +201,9 @@ const CreationTools = () => {
                     </div>
 
                     <div className="row">
-                        {creationTools.map(tool => {
+                        {creationTools.map((tool, index) => {
                             return (
-                                <Tool title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool?.link} />
+                                <Tool key={index} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool?.link} />
                             )
                         })}
                     </div>

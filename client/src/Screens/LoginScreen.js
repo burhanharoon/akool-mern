@@ -13,9 +13,11 @@ const LoginScreen = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [loading, setLoading] = useState(false)
     const userLoggedIn = useSelector(state => state.userInfo)
     const handleLogin = (e) => {
         e.preventDefault()
+        setLoading(true)
         const data = {
             email,
             password
@@ -23,7 +25,7 @@ const LoginScreen = () => {
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
                 dispatch(saveUserInfo(data.user))
-                console.log("OK");
+                setLoading(false)
                 navigate('/')
             })
             .catch(err => console.log(err))
@@ -85,18 +87,21 @@ const LoginScreen = () => {
                             </div> */}
                     </div>
                 </div>
-                <div className="form-group">
+                <div className="form-group my-2">
                     <input type="checkbox" id="css" />
-                    <label htmlFor="css">Remember Me </label>
+                    <label className='mx-2' htmlFor="css">Remember Me </label>
                 </div>
 
                 <div className="log-bt">
-                    <button type="submit">Login</button>
+                    <button type="submit">
+                        {loading && <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>}
+                        Login
+                    </button>
                 </div>
                 <div className="log-btn">
                     <p>Don't have an account?</p>
-                    <Link to="register">Register</Link>
-                    <Link to="forget" className="ml-2">Forget Password</Link>
+                    <Link to={'/'}>Register</Link>
+                    <Link to={'/'} className="mx-2 text-center">Forget Password</Link>
                 </div>
             </form>
         </div>

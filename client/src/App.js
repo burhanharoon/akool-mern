@@ -13,6 +13,7 @@ import AppStoreScreen from './Screens/AppStoreScreen';
 import LoginScreen from './Screens/LoginScreen';
 import { useSelector } from 'react-redux'
 import CreationTools from './Components/CreationTools'
+import RecognitionTools from './Components/RecognitionTools'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
@@ -23,7 +24,7 @@ const App = () => {
           <Route path='/' element={<AppStoreScreen />}>
             <Route index element={<CreationTools />} />
             <Route path='marketplace' element={<div>Maketplace</div>} />
-            <Route path='recognition' element={<div>Reocgnition</div>} />
+            <Route path='recognition' element={<RecognitionTools />} />
           </Route> :
           <Route path='/' >
             <Route index element={<HomeScreen />} />

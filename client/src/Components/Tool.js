@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tool = ({ title, logo, description, rating, link }) => {
+const Tool = ({ key, title, logo, description, rating, link }) => {
 
     const addToUsed = () => {
         const items =

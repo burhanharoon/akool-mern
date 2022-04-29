@@ -1,15 +1,17 @@
 import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useNavigate } from "react-router-dom";
 
 const AppStoreScreen = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate();
     const [showNav, setShowNav] = useState(false)
     const [showNavDropdown, setShowNavDropdown] = useState(false)
     const user = useSelector(state => state.userInfo)
     const handleLogout = () => {
         dispatch(logoutUser())
+        navigate('/')
     }
 
     return (
@@ -67,7 +69,9 @@ const AppStoreScreen = () => {
                                 <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
                                 <div className={showNavDropdown ? 'position-absolute end-0 bg-light p-2 rounded shadow d-sm-none' : 'position-absolute end-0 bg-light p-2 rounded d-none'} style={{ top: "4rem" }}>
                                     <p className='mb-2'>{user.name}</p>
-                                    <p className='mb-0'>{user.email}</p>
+                                    <p className='mb-2'>{user.email}</p>
+                                    <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+
                                 </div>
                             </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
