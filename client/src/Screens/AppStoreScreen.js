@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
 
 
 
@@ -13,6 +15,26 @@ const AppStoreScreen = () => {
     const handleLogout = () => {
         dispatch(logoutUser())
     }
+    const [home, setHome] = useState(true)
+    const [marketplace, setmarketplace] = useState(false)
+    const [recognition, setrecognition] = useState(false)
+    const [path, setpath] = useState('false')
+
+    // const decidePathname = () => {
+    //     if (path.includes('/recognition')) {
+    //         setrecognition(true)
+    //     } else if (path.includes('/marketplace')) {
+    //         setmarketplace(true)
+    //     } else {
+    //         setHome(true)
+    //     }
+    // }
+    // const location = useLocation()
+    // useEffect(() => {
+    //     setpath(location)
+    //     decidePathname()
+    // }, [])
+    // console.log(home, marketplace, recognition);
 
     return (
         <>
@@ -24,9 +46,9 @@ const AppStoreScreen = () => {
                         </div>
                         <div className="dash-menu">
                             <ul>
-                                <li className="acctive"><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
-                                <li><Link to="/marketplace"><img src="/images/application.png" alt="" /> Data Marketplace</Link></li>
-                                <li><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>
+                                <li className={home ? "acctive" : ''}><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
+                                <li className={marketplace ? "acctive" : ''}><Link to="/marketplace"><img src="/images/application.png" alt="" /> Data Marketplace</Link></li>
+                                <li className={recognition ? "acctive" : ''}><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>
                             </ul>
                         </div>
                     </div>

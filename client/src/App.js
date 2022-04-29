@@ -23,6 +23,7 @@ const App = () => {
           <Route path='/' element={<AppStoreScreen />}>
             <Route index element={<CreationTools />} />
             <Route path='marketplace' element={<CreationTools />} />
+            <Route path='recognition' element={<CreationTools />} />
           </Route> :
           <Route path='/' >
             <Route index element={<HomeScreen />} />
