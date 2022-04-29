@@ -11,27 +11,27 @@ export const recognitionTools = [
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.',
         logo: '/images/recognition/Face Recognition/logo.png',
         rating: 5,
-        link: 'https://console.akool.com/3d'
+        link: ''
     },
     {
         title: "Image Search",
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.',
         logo: '/images/recognition/Image Search/logo.png',
         rating: 5,
-        link: 'https://console.akool.com/3d'
+        link: ''
     },
     {
         title: "Product Recognition",
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.',
         logo: '/images/recognition/Product Recognition/logo.png',
         rating: 5,
-        link: 'https://console.akool.com/3d'
+        link: ''
     },
     {
         title: "Security Monitor",
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.',
         logo: '/images/recognition/Security Monitor/logo.png',
         rating: 5,
-        link: 'https://console.akool.com/3d'
+        link: ''
     },
 ]
