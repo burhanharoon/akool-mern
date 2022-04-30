@@ -33,13 +33,19 @@ const RegisterScreen = () => {
             }
             axios.post('https://api.akool.com/api/v1/public/register', data)
                 .then((res) => {
-                    // dispatch(saveUserInfo(data.user))
                     setLoading(false)
+                    setConfirmRegistration(true)
+                    setTimeout(() => {
+                        setConfirmRegistration(false)
+                    }, 4000);
                     console.log(res);
-                    // navigate('/')
                 })
-                .catch(err => console.log(err))
+                .catch(err => {
+                    setLoading(false)
+                    console.log(err)
+                })
         }
+
     }
 
     // If ths user is already logged in then redirect to home screen
