@@ -7,12 +7,15 @@ import { saveUserInfo } from '../actions/userActions'
 import { useSelector } from 'react-redux'
 
 
-const LoginScreen = () => {
+const RegisterScreen = () => {
 
     const dispatch = useDispatch()
     const navigate = useNavigate();
+    const [firstName, setFirstName] = useState('')
+    const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const userLoggedIn = useSelector(state => state.userInfo)
     const handleLogin = (e) => {
@@ -73,34 +76,38 @@ const LoginScreen = () => {
                 </div>
             </div>
         </div>
-        <div className="login-form rounded" style={{ height: '34rem' }} data-aos="zoom-in" data-aos-delay={650} data-aos-duration={2300}>
+        <div className="login-form rounded" data-aos="zoom-in" data-aos-delay={650} data-aos-duration={2300}>
             <div className="login-form-title">
-                <h4>Login</h4>
+                <h4>Register</h4>
             </div>
             <form onSubmit={(e) => { handleLogin(e) }}>
                 <div className="login-inp">
+                    <div className='d-flex gap-2 flex-column flex-sm-row'>
+                        <input value={firstName} onChange={(e) => { setFirstName(e.target.value) }} type="text" placeholder="First Name" />
+                        <input value={lastName} onChange={(e) => { setLastName(e.target.value) }} type="text" placeholder="Last Name" />
+                    </div>
                     <input value={email} onChange={(e) => { setEmail(e.target.value) }} name="email" type="Email" placeholder="Your Email" />
-                    <div className="input-group mb-3">
+                    <div className="input-group">
                         <input value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control" type="password" placeholder="Password" />
-                        {/* <div className="input-group-append">
-                                <span className="input-group-text" id="basic-addon2"><i class="fa-solid fa-eye"></i></span>
-                            </div> */}
+                    </div>
+                    <div className="input-group mb-3">
+                        <input value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} className="form-control" type="password" placeholder="Confirm Password" />
                     </div>
                 </div>
                 <div className="form-group my-2">
-                    <input type="checkbox" id="css" />
-                    <label className='mx-2' htmlFor="css">Remember Me </label>
+                    <input type="checkbox" style={{ width: '1rem', height: '1rem' }} id="css" />
+                    <label className='mx-2 text-white fs-5' htmlFor="css">Remember Me </label>
                 </div>
 
                 <div className="log-bt">
                     <button type="submit">
                         {loading && <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>}
-                        Login
+                        Register
                     </button>
                 </div>
                 <div className="log-btn">
-                    <p>Don't have an account?</p>
-                    <Link to='/register'>Register</Link>
+                    <p>Already have an account?</p>
+                    <Link to='/login'>Login</Link>
                 </div>
             </form>
         </div>
@@ -108,4 +115,4 @@ const LoginScreen = () => {
 
 }
 
-export default LoginScreen
+export default RegisterScreen

@@ -16,7 +16,7 @@ const AppStoreScreen = () => {
 
     return (
         <>
-            <div className="dash-area">
+            <div className="dash-area" >
                 <div className="dash-fl">
                     <div className="dash-left">
                         <div className="dash-logo">
@@ -30,7 +30,7 @@ const AppStoreScreen = () => {
                             </ul>
                         </div>
                     </div>
-                    <div className="dash-right">
+                    <div className="dash-right" style={{ position: 'relative' }}>
                         <div className="store-baner gap-4" style={{ backgroundImage: "url('images/app_intro_bg.png')" }}>
                             <div title="nav_icon" onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className="dash-right-btn col-md-block" data-bs-toggle="offcanvas"
                                 role="button" aria-controls="offcanvasExample">
@@ -64,7 +64,11 @@ const AppStoreScreen = () => {
                                 <div className='text-white d-none d-sm-block fw-bold fs-6'>
                                     <p className='text-white mb-2'>{user.name}</p>
                                     <p className='text-white mb-2'>{user.email}</p>
-                                    <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+                                    <div className='d-flex items-center gap-2'>
+                                        <button type="button" className="btn btn-primary w-100">Profile</button>
+                                        <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+
+                                    </div>
                                 </div>
                                 <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
                                 <div className={showNavDropdown ? 'position-absolute end-0 bg-light p-2 rounded shadow d-sm-none' : 'position-absolute end-0 bg-light p-2 rounded d-none'} style={{ top: "4rem" }}>
@@ -76,6 +80,18 @@ const AppStoreScreen = () => {
                             </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
+                        {/* <div style={{ position: 'absolute', backgroundColor: 'white' }}>
+                            <div className='d-flex items-center justify-content-center gap-2'>
+                                <div>Name</div>
+                                <div>{user.name}</div>
+                            </div>
+                            <div className='d-flex items-center justify-content-center gap-2'>
+                                <div>Email</div>
+                                <div>{user.email}</div>
+                            </div>
+
+                        </div> */}
+
                         <Outlet />
                     </div>
                 </div>

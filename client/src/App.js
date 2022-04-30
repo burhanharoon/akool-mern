@@ -14,6 +14,7 @@ import LoginScreen from './Screens/LoginScreen';
 import { useSelector } from 'react-redux'
 import CreationTools from './Components/CreationTools'
 import RecognitionTools from './Components/RecognitionTools'
+import RegisterScreen from './Screens/RegisterScreen'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
@@ -34,8 +35,9 @@ const App = () => {
           <Route index element={<AppsScreen />} />
           <Route path=':id' element={<AppIntroScreen />} />
         </Route>
-        <Route path='/login' element={<Navbar hideNavItems />}>
-          <Route index element={<LoginScreen />} />
+        <Route path='/' element={<Navbar hideNavItems />}>
+          <Route path='login' element={<LoginScreen />} />
+          <Route path='register' element={<RegisterScreen />} />
         </Route>
       </Routes>
 
