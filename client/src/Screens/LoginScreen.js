@@ -82,9 +82,9 @@ const LoginScreen = () => {
                     <input value={email} onChange={(e) => { setEmail(e.target.value) }} name="email" type="Email" placeholder="Your Email" />
                     <div className="input-group mb-3">
                         <input value={password} onChange={(e) => { setPassword(e.target.value) }} className="form-control" type="password" placeholder="Password" />
-                        {/* <div className="input-group-append">
-                                <span className="input-group-text" id="basic-addon2"><i class="fa-solid fa-eye"></i></span>
-                            </div> */}
+                        <div className="input-group-append">
+                            {/* <span className="input-group-text" id="basic-addon2"><i class="fa-solid fa-eye"></i></span> */}
+                        </div>
                     </div>
                 </div>
                 <div className="form-group my-2">

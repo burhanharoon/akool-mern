@@ -17,21 +17,30 @@ const RegisterScreen = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const [wrongPassword, setWrongPassword] = useState(false)
     const userLoggedIn = useSelector(state => state.userInfo)
-    const handleLogin = (e) => {
+    const handleRegister = (e) => {
         e.preventDefault()
         setLoading(true)
-        const data = {
-            email,
-            password
+        if (password !== confirmPassword) {
+            setWrongPassword(true)
+            setLoading(false)
+        } else {
+            const data = {
+                email,
+                firstName: firstName.trim(),
+                lastName: lastName.trim(),
+                password
+            }
+            axios.post('https://api.akool.com/api/v1/public/register', data)
+                .then((res) => {
+                    // dispatch(saveUserInfo(data.user))
+                    setLoading(false)
+                    console.log(res);
+                    // navigate('/')
+                })
+                .catch(err => console.log(err))
         }
-        axios.post('https://api.akool.com/api/v1/public/login', data)
-            .then(({ data }) => {
-                dispatch(saveUserInfo(data.user))
-                setLoading(false)
-                navigate('/')
-            })
-            .catch(err => console.log(err))
     }
 
     // If ths user is already logged in then redirect to home screen
@@ -80,7 +89,7 @@ const RegisterScreen = () => {
             <div className="login-form-title">
                 <h4>Register</h4>
             </div>
-            <form onSubmit={(e) => { handleLogin(e) }}>
+            <form onSubmit={(e) => { handleRegister(e) }}>
                 <div className="login-inp">
                     <div className='d-flex gap-2 flex-column flex-sm-row'>
                         <input value={firstName} onChange={(e) => { setFirstName(e.target.value) }} type="text" placeholder="First Name" />
@@ -93,6 +102,11 @@ const RegisterScreen = () => {
                     <div className="input-group mb-3">
                         <input value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} className="form-control" type="password" placeholder="Confirm Password" />
                     </div>
+                    {wrongPassword &&
+                        <div className="alert alert-warning " role="alert">
+                            Passwords didn't match. Please try again!
+                        </div>
+                    }
                 </div>
                 <div className="form-group my-2">
                     <input type="checkbox" style={{ width: '1rem', height: '1rem' }} id="css" />
@@ -101,10 +115,11 @@ const RegisterScreen = () => {
 
                 <div className="log-bt">
                     <button type="submit">
-                        {loading && <span class="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>}
+                        {loading && <span className="spinner-border spinner-border-sm mx-2" role="status" aria-hidden="true"></span>}
                         Register
                     </button>
                 </div>
+
                 <div className="log-btn">
                     <p>Already have an account?</p>
                     <Link to='/login'>Login</Link>
