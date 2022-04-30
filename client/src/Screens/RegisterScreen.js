@@ -9,8 +9,6 @@ import { useSelector } from 'react-redux'
 
 const RegisterScreen = () => {
 
-    const dispatch = useDispatch()
-    const navigate = useNavigate();
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
@@ -18,6 +16,7 @@ const RegisterScreen = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [wrongPassword, setWrongPassword] = useState(false)
+    const [confirmRegistration, setConfirmRegistration] = useState(false)
     const userLoggedIn = useSelector(state => state.userInfo)
     const handleRegister = (e) => {
         e.preventDefault()
@@ -105,6 +104,11 @@ const RegisterScreen = () => {
                     {wrongPassword &&
                         <div className="alert alert-warning " role="alert">
                             Passwords didn't match. Please try again!
+                        </div>
+                    }
+                    {confirmRegistration &&
+                        <div className="alert alert-success " role="alert">
+                            Registration Successful!
                         </div>
                     }
                 </div>
