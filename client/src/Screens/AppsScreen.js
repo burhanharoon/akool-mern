@@ -1,9 +1,24 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Carousel from '../Components/Carousel'
+import Tool from '../Components/Tool'
+import { creationTools } from '../creationTools'
 
 
 const AppsScreen = () => {
+    const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
+
+    const getProducts = async () => {
+        const { data } = await axios.get('/api/tools/creation')
+        setLoading(false)
+        setProducts(data)
+    }
+    useEffect(() => {
+        getProducts()
+    }, [])
+
     return (
         <>
             <section className="banner_two launch_banner_two">
@@ -63,334 +78,15 @@ const AppsScreen = () => {
                         </div>
 
                         <div className="row">
-                            <div className="col-lg-4 col-md-6">
-                                <Link to={'/apps/1'}>
-                                    <div className="slider_card">
-                                        <div className="top_section">
-                                            <div className="image_section">
-                                                <img src="/images/slider_image.png" alt="slider" />
-                                            </div>
-                                            <div className="heart_icon_section">
-                                                <i className="fa fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div className="bottom_section">
-                                            <h3 className='launch-h3'>Akool Marketplace</h3>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                            <div className="rating_section d-flex align-items-baseline">
-                                                <h5 className="mb-0">5.0</h5>
-                                                <div className="star_section">
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
+                            {
+                                products.map(item =>
+                                    <div key={item._id} className="col-lg-4 col-md-6">
+                                        <Link to={item.title}>
+                                            <Tool title={item.title} logo={item.logo} description={item.description} rating={item.rating} maintainHistory={false} />
+                                        </Link>
                                     </div>
-                                </Link>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <Link to={'/apps/1'}>
-                                    <div className="slider_card">
-                                        <div className="top_section">
-                                            <div className="image_section">
-                                                <img src="/images/slider_image.png" alt="slider" />
-                                            </div>
-                                            <div className="heart_icon_section">
-                                                <i className="fa fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div className="bottom_section">
-                                            <h3 className='launch-h3'>Akool Marketplace</h3>
-                                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                            <div className="rating_section d-flex align-items-baseline">
-                                                <h5 className="mb-0">5.0</h5>
-                                                <div className="star_section">
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                    <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-4 col-md-6 view_more_row">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 view_more_row">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div className="col-lg-4 col-md-6 view_more_row">
-                                <div className="slider_card">
-                                    <div className="top_section">
-                                        <div className="image_section">
-                                            <img src="/images/slider_image.png" alt="slider" />
-                                        </div>
-                                        <div className="heart_icon_section">
-                                            <i className="fa fa-heart"></i>
-                                        </div>
-                                    </div>
-                                    <div className="bottom_section">
-                                        <h3 className='launch-h3'>Akool Marketplace</h3>
-                                        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
-                                        <div className="rating_section d-flex align-items-baseline">
-                                            <h5 className="mb-0">5.0</h5>
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
+                                )
+                            }
                         </div>
                         <div className="row">
                             <div className="see_more_btn text-center">
@@ -404,7 +100,7 @@ const AppsScreen = () => {
             {/* Recommended Apps slider part end  */}
             <section className="last_part d-flex">
                 <div className="image_section">
-                    <img src="/images/lunch_last.png" alt="lunch" className="img-fluid w-100 h-100" />
+                    <img src="" alt="lunch" className="img-fluid w-100 h-100" />
                 </div>
                 <div className="last_text_part">
                     <h3 className='launch-h3'>Build With Akool</h3>

@@ -80,18 +80,6 @@ const AppStoreScreen = () => {
                             </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
-                        {/* <div style={{ position: 'absolute', backgroundColor: 'white' }}>
-                            <div className='d-flex items-center justify-content-center gap-2'>
-                                <div>Name</div>
-                                <div>{user.name}</div>
-                            </div>
-                            <div className='d-flex items-center justify-content-center gap-2'>
-                                <div>Email</div>
-                                <div>{user.email}</div>
-                            </div>
-
-                        </div> */}
-
                         <Outlet />
                     </div>
                 </div>

@@ -15,7 +15,7 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 
-app.use('/api/tool', toolRoutes)
+app.use('/api/tools', toolRoutes)
 app.get('/', (req, res) => {
     res.send("Api is running 🚀")
 })

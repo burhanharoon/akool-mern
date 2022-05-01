@@ -33,7 +33,7 @@ const App = () => {
         }
         <Route path='/apps' element={<Navbar hideNavItems />}>
           <Route index element={<AppsScreen />} />
-          <Route path=':id' element={<AppIntroScreen />} />
+          <Route path=':title' element={<AppIntroScreen />} />
         </Route>
         <Route path='/' element={<Navbar hideNavItems />}>
           <Route path='login' element={<LoginScreen />} />
