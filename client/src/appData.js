@@ -1,7 +1,7 @@
 export const appData = {
-    image: "/images/app_intro_content.png",
     title: "Akool Marketplace",
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.",
+    image: "/images/app_intro_content.png",
     rating: 5,
     downloadLink: '/',
     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
