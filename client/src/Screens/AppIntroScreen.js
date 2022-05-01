@@ -1,18 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import { appData } from '../appData'
 import Carousel from '../Components/Carousel'
 
-const AppIntroScreen = () => {
-    const initialValue = {
-        faq1: true,
-        faq2: false,
-        faq3: false,
-    }
-    const closeFaq = number => {
-        let key = `faq${number}`
-        faq[key] ? setFaq({ faq, [key]: false }) : setFaq({ faq, [key]: true })
-    }
 
-    const [faq, setFaq] = useState(initialValue)
+const AppIntroScreen = () => {
+    const { title, about, description, downloadLink, faq, goal, image, rating, testimonials } = appData
+
+
     useEffect(() => {
         window.scrollTo(0, 0)
     }, [])
@@ -151,12 +145,12 @@ const AppIntroScreen = () => {
                         </div>
                     </div>
 
-                    <div className="row">
+                    {/* <div className="row">
                         <div className="col-lg-10 m-auto">
                             <div className="accordion" id="accordionExample">
                                 <div className="accordion-item">
                                     <h2 className="accordion-header" id="headingOne">
-                                        <button onClick={() => { closeFaq(1) }} className="accordion-button bg-white" type="button">
+                                        <button className="accordion-button bg-white" type="button">
                                             <p className="mb-0">Question 1</p>
                                             <span>
                                                 {faq.faq1 ? <i className="fa fa-minus faq_minus" aria-hidden="true"></i> :
@@ -173,7 +167,7 @@ const AppIntroScreen = () => {
 
                                 <div className="accordion-item">
                                     <h2 className="accordion-header" id="headingOne">
-                                        <button onClick={() => { closeFaq(2) }} className="accordion-button bg-white" type="button">
+                                        <button className="accordion-button bg-white" type="button">
                                             <p className="mb-0">Question 2</p>
                                             <span>
                                                 {faq.faq2 ? <i className="fa fa-minus faq_minus" aria-hidden="true"></i> :
@@ -190,7 +184,7 @@ const AppIntroScreen = () => {
 
                                 <div className="accordion-item">
                                     <h2 className="accordion-header" id="headingOne">
-                                        <button onClick={() => { closeFaq(3) }} className="accordion-button bg-white" type="button">
+                                        <button className="accordion-button bg-white" type="button">
                                             <p className="mb-0">Question 3</p>
                                             <span>
                                                 {faq.faq3 ? <i className="fa fa-minus faq_minus" aria-hidden="true"></i> :
@@ -207,7 +201,7 @@ const AppIntroScreen = () => {
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </section>
 
