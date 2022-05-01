@@ -1,5 +1,5 @@
 {
-  "name": "mini-information-architecture",
+  "name": "akool-mern",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ez-sherlock/mini-information-architecture.git"
+    "url": "git+https://github.com/ez-sherlock/akool-mern.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ez-sherlock/mini-information-architecture/issues"
+    "url": "https://github.com/ez-sherlock/akool-mern/issues"
   },
-  "homepage": "https://github.com/ez-sherlock/mini-information-architecture#readme",
+  "homepage": "https://github.com/ez-sherlock/akool-mern#readme",
   "dependencies": {
     "concurrently": "^7.1.0",
     "dotenv": "^16.0.0",

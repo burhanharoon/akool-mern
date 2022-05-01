@@ -8,11 +8,19 @@ const creationToolSchema = mongoose.Schema(
         },
         description: {
             type: String,
+            required: true
+        },
+        logo: {
+            type: String,
+            required: true
         },
         rating: {
             type: Number,
-            required: true,
             default: 0,
+        },
+        link: {
+            type: String,
+            default: ''
         },
     },
     {

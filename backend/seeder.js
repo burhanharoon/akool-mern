@@ -1,10 +1,9 @@
-import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import CreationTool from './models/creationToolModel.js'
 import RecognitionTool from './models/recognitionToolModel.js'
 import connectDB from './config/db.js'
-import creationTools from './data/creationTools.js'
-import recognitionTools from './data/recognitionTools.js'
+import { creationTools } from './data/creationTools.js'
+import { recognitionTools } from './data/recognitionTools.js'
 
 dotenv.config()
 
