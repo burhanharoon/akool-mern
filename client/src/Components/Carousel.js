@@ -3,14 +3,14 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
-const Carousel = () => {
+const Carousel = ({ white = false }) => {
     return (
         <OwlCarousel
             className="slider_section top_selected_apps_slider owl-carousel"
             margin={30} responsiveClass={true} nav={true} dots={false} autoplay={false}
             navText={[
-                `<div><img src="/images/slider_prev_arrow.png" alt="previous"/></div>`,
-                `<div><img src="/images/slider_right_arrow.png" alt="next"/></div>`]}
+                `<div><img src="/images/${white ? 'slider_prev_white.png' : 'slider_prev_arrow.png'}" alt="previous"/></div>`,
+                `<div><img src="/images/${white ? 'slider_next_white.png' : 'slider_right_arrow.png'}" alt="next"/></div>`]}
             responsive={{ 0: { items: 1, }, 700: { items: 3, }, }}
         >
 

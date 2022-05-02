@@ -4,6 +4,7 @@ import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Navbar from '../Components/Navbar';
+import { Link } from 'react-router-dom';
 
 const HomeScreen = () =>
     <div>
@@ -234,7 +235,7 @@ const HomeScreen = () =>
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <Carousel />
+                        <Carousel white={true} />
                     </div>
                 </div>
             </div>
@@ -267,14 +268,14 @@ const HomeScreen = () =>
                     <div className="col-lg-6">
                         <div className="heading_text_section">
                             <h3 className="mb-0">3D Commerce Apps</h3>
-                            <p className="mb-0">Akool 3D & video solutions enpower you to create 3D videos and 3D objects with
+                            <p className="mb-0 text-white">Akool 3D & video solutions enpower you to create 3D videos and 3D objects with
                                 one click.</p>
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <Carousel />
+                        <Carousel white={true} />
                     </div>
                 </div>
             </div>
@@ -370,8 +371,9 @@ const HomeScreen = () =>
                                     </ul>
                                 </div>
                                 <div className="footer_register_btn">
-                                    <a href='true'>Register</a>
+                                    <Link to='register'>Register</Link>
                                 </div>
+
                             </div>
 
                         </div>

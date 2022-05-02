@@ -27,7 +27,7 @@ const RecognitionTools = () => {
                 </div>
                 <div className="used-fl gap-3">
                     {
-                        usedItems?.map(item =>
+                        usedItems?.reverse().map(item =>
                             <div className="slider_card">
                                 <div className="top_section">
                                     <div className="image_section">
