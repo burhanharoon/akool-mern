@@ -4,10 +4,9 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const TestimonialCarousel = ({ testimonials }) => {
-    console.log(testimonials);
     return (
         <OwlCarousel
-            className="slider_section top_selected_apps_slider owl-carousel d-flex justify-content-center align-items-center"
+            className="slider_section top_selected_apps_slider owl-carousel "
             margin={30} responsiveClassName={true} nav={true} dots={false} autoplay={false}
             navText={[
                 `<div><img src="/images/slider_prev_arrow.png" alt="previous"/></div>`,
