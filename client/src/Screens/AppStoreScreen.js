@@ -29,9 +29,9 @@ const AppStoreScreen = () => {
                         </div>
                         <div className="dash-menu">
                             <ul>
-                                <li className={"acctive"}><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
-                                <li className={"acctive"}><Link to="/marketplace"><img src="/images/application.png" alt="" /> Data Marketplace</Link></li>
-                                <li className={"acctive"}><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>
+                                <li><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
+                                <li><a href="https://market.akool.com/"><img src="/images/application.png" alt="" /> Data Marketplace</a></li>
+                                <li><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>
                             </ul>
                         </div>
                     </div>
@@ -53,11 +53,11 @@ const AppStoreScreen = () => {
 
 
                                     <div className="dash-menu">
-                                        <ul>
-                                            <li className="acctive"><a href="true"><img src="/images/application.png" alt="" />
-                                                Creation</a></li>
-                                            <li><a href="true"><img src="/images/application.png" alt="" />Data Marketplace</a></li>
-                                            <li><a href="true"><img src="/images/application.png" alt="" />Recognition</a></li>
+                                        <ul onClick={() => { setShowNav(false) }}>
+                                            <li ><Link to="/"><img src="/images/application.png" alt="" />
+                                                Creation</Link></li>
+                                            <li><a href="https://market.akool.com/"><img src="/images/application.png" alt="" />Data Marketplace</a></li>
+                                            <li><Link to="/recognition"><img src="/images/application.png" alt="" />Recognition</Link></li>
                                         </ul>
                                     </div>
 

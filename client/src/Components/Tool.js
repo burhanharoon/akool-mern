@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Tool = ({ title, logo, description, rating, link, maintainHistory }) => {
+const Tool = ({ title, logo, description, rating, link, maintainHistory = true }) => {
 
     const addToUsed = () => {
         if (maintainHistory) {
@@ -14,6 +14,9 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory }) => {
             }
             if (localStorage.getItem('used')) {
                 let usedItems = JSON.parse(localStorage.getItem('used'))
+                if (usedItems.length > 2) {
+                    usedItems.pop()
+                }
                 usedItems.push(items)
                 localStorage.setItem('used', JSON.stringify(usedItems))
             } else {

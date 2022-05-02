@@ -24,7 +24,6 @@ const App = () => {
         {userLoggedIn ?
           <Route path='/' element={<AppStoreScreen />}>
             <Route index element={<CreationTools />} />
-            <Route path='marketplace' element={<div>Maketplace</div>} />
             <Route path='recognition' element={<RecognitionTools />} />
           </Route> :
           <Route path='/' >
