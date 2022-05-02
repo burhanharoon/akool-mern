@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { appData } from '../appData'
 import Carousel from '../Components/Carousel'
+import TestimonialCarousel from '../Components/TestimonialCarousel'
 
 const AppIntroScreen = () => {
     const { title } = useParams()
@@ -143,10 +144,11 @@ const AppIntroScreen = () => {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12">
-                            <Carousel />
+                            <TestimonialCarousel testimonials={product.testimonials} />
                         </div>
                     </div>
                 </div>
+
 
             </section>
 
