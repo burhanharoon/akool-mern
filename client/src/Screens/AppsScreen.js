@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Carousel from '../Components/Carousel'
 import Tool from '../Components/Tool'
-
+import { Spinner } from 'react-bootstrap'
 
 const AppsScreen = () => {
     const [products, setProducts] = useState([])
@@ -77,7 +77,13 @@ const AppsScreen = () => {
                         </div>
 
                         <div className="row">
-                            {
+                            {loading ?
+                                <div className='w-full d-flex justify-content-center'>
+                                    <Spinner animation="border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </Spinner>
+                                </div>
+                                :
                                 products.map(item =>
                                     <div key={item._id} className="col-lg-4 col-md-6">
                                         <Link to={item.title}>

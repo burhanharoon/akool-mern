@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Button, Modal, InputGroup, FormControl } from 'react-bootstrap'
 
 const AppStoreScreen = () => {
     const dispatch = useDispatch()
@@ -13,6 +14,10 @@ const AppStoreScreen = () => {
         dispatch(logoutUser())
         navigate('/')
     }
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     return (
         <>
@@ -65,16 +70,41 @@ const AppStoreScreen = () => {
                                     <p className='text-white mb-2'>{user.name}</p>
                                     <p className='text-white mb-2'>{user.email}</p>
                                     <div className='d-flex items-center gap-2'>
-                                        <button type="button" className="btn btn-primary w-100">Profile</button>
-                                        <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+                                        <Button variant="primary" className='w-100' onClick={handleShow}>
+                                            Profile
+                                        </Button>
 
+                                        <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+                                        <Modal show={show} onHide={handleClose}>
+                                            <Modal.Header closeButton>
+                                                <Modal.Title>Profile</Modal.Title>
+                                            </Modal.Header>
+                                            <Modal.Body>
+                                                <InputGroup size="lg" className='mb-3'>
+                                                    <InputGroup.Text id="inputGroup-sizing-lg">Email</InputGroup.Text>
+                                                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" value={user.email} />
+                                                </InputGroup>
+                                                <InputGroup size="lg">
+                                                    <InputGroup.Text id="inputGroup-sizing-lg">Name</InputGroup.Text>
+                                                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" value={user.name} />
+                                                </InputGroup>
+                                            </Modal.Body>
+                                            <Modal.Footer>
+                                                <Button variant="secondary" onClick={handleClose}>
+                                                    Close
+                                                </Button>
+                                            </Modal.Footer>
+                                        </Modal>
                                     </div>
                                 </div>
                                 <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
                                 <div className={showNavDropdown ? 'position-absolute end-0 bg-light p-2 rounded shadow d-sm-none' : 'position-absolute end-0 bg-light p-2 rounded d-none'} style={{ top: "4rem" }}>
                                     <p className='mb-2'>{user.name}</p>
                                     <p className='mb-2'>{user.email}</p>
-                                    <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
+                                    <Button variant="primary" className='w-100 mb-1' onClick={handleShow}>
+                                        Profile
+                                    </Button>
+                                    <button onClick={handleLogout} type="button" className="btn btn-primary w-100">Logout</button>
 
                                 </div>
                             </div>

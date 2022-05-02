@@ -203,7 +203,11 @@ const CreationTools = () => {
                     <div className="row">
                         {creationTools.map((tool, index) => {
                             return (
-                                <Tool key={index} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool?.link} />
+                                <div key={tool._id} className="col-lg-4 col-md-6">
+                                    <a href={tool.link} target="_blank" rel="noopener noreferrer">
+                                        <Tool key={index} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} maintainHistory={true} />
+                                    </a>
+                                </div>
                             )
                         })}
                     </div>

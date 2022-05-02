@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Faq from '../Components/Faq'
 import TestimonialCarousel from '../Components/TestimonialCarousel'
+import { Spinner } from 'react-bootstrap'
 
 const AppIntroScreen = () => {
     const { title } = useParams()
@@ -23,7 +24,13 @@ const AppIntroScreen = () => {
     return (
 
         <div>
-            {loading ? <div>Loading...</div> :
+            {loading ?
+                <div style={{ height: '100vh' }} className='d-flex justify-content-center align-items-center'>
+                    <Spinner animation="border" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                    </Spinner>
+                </div>
+                :
                 <div>
                     <section className="banner_two">
                         <div className="container banner_container">
