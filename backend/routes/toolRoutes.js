@@ -18,7 +18,7 @@ router.post('/find/:title', async (req, res) => {
     const title = req.params.title
     try {
         const creationTools = await ToolDetail.find({ title })
-        creationTools.length > 0 ? res.send(creationTools) : res.send("null")
+        creationTools.length > 0 ? res.send(creationTools[0]) : res.send("null")
     } catch (error) {
         res.send(error)
     }

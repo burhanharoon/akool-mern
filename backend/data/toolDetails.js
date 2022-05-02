@@ -2,7 +2,7 @@ export const toolDetails = [
     {
         title: "3D Modelling",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.",
-        logo: "/images/app_intro_content.png",
+        logo: "/images/creation/3D Modelling/logo.png",
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
@@ -37,7 +37,7 @@ export const toolDetails = [
     {
         title: "3D Movie",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.",
-        logo: "/images/app_intro_content.png",
+        logo: "/images/creation/3D Movie/logo.png",
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
@@ -72,7 +72,7 @@ export const toolDetails = [
     {
         title: "Face Swap",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.",
-        logo: "/images/app_intro_content.png",
+        logo: "/images/creation/Face Swap/logo.png",
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",

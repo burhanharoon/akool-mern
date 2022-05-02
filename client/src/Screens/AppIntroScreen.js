@@ -1,15 +1,59 @@
+import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { appData } from '../appData'
 import Carousel from '../Components/Carousel'
 
-
 const AppIntroScreen = () => {
-    const { title, about, description, downloadLink, faq, goal, image, rating, testimonials } = appData
+    const { title } = useParams()
+    const [product, setProduct] = useState({
+        title: "3D Modelling",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam.",
+        logo: "/images/creation/3D Modelling/logo.png",
+        rating: 5,
+        downloadLink: '/',
+        about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        testimonials: [
+            {
+                image: '/images/app_intro_content.png',
+                name: 'Sterling Lambert',
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+                date: Date.now(),
+                rating: 4,
+            },
+            {
+                image: '/images/app_intro_content.png',
+                name: 'Sterling Lambert',
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+                date: Date.now(),
+                rating: 4,
+            }
+        ],
+        faq: [
+            {
+                question: 'What is this app?',
+                answer: " It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow."
+            },
+            {
+                question: 'What is this app?',
+                answer: " It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow."
+            }
+        ]
+    })
+    const [loading, setLoading] = useState(true)
 
+    const getProducts = async () => {
+        const { data } = await axios.post(`/api/tools/find/${title}`)
+        setLoading(false)
+        setProduct(data)
+        console.log(data);
+    }
+    // useEffect(() => {
+    //     window.scrollTo(0, 0)
+    //     // getProducts()
+    // }, [])
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-    }, [])
     return (
         <>
             <section className="banner_two">
@@ -17,12 +61,8 @@ const AppIntroScreen = () => {
                     <div className="row">
                         <div className="col-lg-10">
                             <div className="banner_text">
-                                <h3 className='app-intro-h3'>Akool Marketplace</h3>
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat.
-                                    <span className="text_span">Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur.</span>
-                                </p>
+                                <h3 className='app-intro-h3'>{product.title}</h3>
+                                <p>{product.description}</p>
                                 <div className="rating_section d-flex align-items-baseline">
 
                                     <div className="star_section">
@@ -39,7 +79,7 @@ const AppIntroScreen = () => {
                         </div>
 
                         <div className="banner_content_image">
-                            <img src="/images/app_intro_content.png" alt=" app intro" className="img-fluid w-100" />
+                            <img src={product.logo} alt=" app intro" className="img-fluid w-100" />
                         </div>
                     </div>
                 </div>
@@ -49,7 +89,7 @@ const AppIntroScreen = () => {
                 <div className="container">
                     <div className="row">
                         <div className="download_btn m-auto text-center">
-                            <a href="true" title="download">Download an App</a>
+                            <a href={product.downloadLink} title="download">Download an App</a>
                         </div>
                     </div>
 
@@ -60,17 +100,7 @@ const AppIntroScreen = () => {
                         <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
                             <div className="about_text_part">
                                 <h3 className='app-intro-h3'>About the App</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                    labore et dolore magna aliqua.
-                                    <span className="d-block">
-                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                        culpa qui officia deserunt mollit anim id est laborum.
-
-                                    </span>
-
-                                </p>
+                                <p>{product.about}</p>
                             </div>
                             <div className="about_image_part">
                                 <img src="/images/app_intro_about.png" alt="about" className="img-fluid" />
@@ -90,20 +120,8 @@ const AppIntroScreen = () => {
                                 </div>
                                 <div className="about_text_part">
                                     <h3 className='app-intro-h3'>What's our main goal?</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                        ut labore et dolore magna aliqua.
-                                        <span className="d-block">
-                                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-                                            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                                        </span>
-
-                                    </p>
+                                    <p>{product.goal}</p>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
