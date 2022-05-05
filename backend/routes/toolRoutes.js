@@ -1,8 +1,20 @@
 import express from 'express'
+import _3dApp from '../models/3dAppModel.js'
 import CreationTool from '../models/creationToolModel.js'
 import RecognitionTool from '../models/recognitionToolModel.js'
 import ToolDetail from '../models/toolDetailModel.js'
+import TopApp from '../models/topAppModel.js'
 const router = express.Router()
+
+router.get('/top', async (req, res) => {
+    const topApps = await TopApp.find({})
+    res.send(topApps)
+})
+
+router.get('/3d', async (req, res) => {
+    const _3dApps = await _3dApp.find({})
+    res.send(_3dApps)
+})
 
 router.get('/creation', async (req, res) => {
     const creationTools = await CreationTool.find({})

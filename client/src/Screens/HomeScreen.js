@@ -5,6 +5,9 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 import Navbar from '../Components/Navbar';
 import { Link } from 'react-router-dom';
+import TopApps from '../Components/TopApps';
+import ThreeDimensionalApps from '../Components/ThreeDimensionalApps';
+import CommerceApps from '../Components/CommerceApps';
 
 const HomeScreen = () =>
     <div>
@@ -200,65 +203,12 @@ const HomeScreen = () =>
         </section>
         {/*  feature part end  */}
 
-        {/* Top Selected Commerce Apps slider part start */}
-        <section id="top_selected_apps_section">
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="heading_text_section">
-                            <h3 className="mb-0">Top Selected Commerce Apps</h3>
-                            <p className="mb-0">Akool video solutions enpower live video analytics from security camera, webcam,
-                                phone camera, et al. Hardware is optional.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <Carousel />
-                    </div>
-                </div>
-            </div>
-        </section>
-        {/* Top Selected Commerce Apps slider part End  */}
+        <TopApps />
 
-        <section id="three_d_app_section" >
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="heading_text_section">
-                            <h3 className="mb-0">3D Commerce Apps</h3>
-                            <p className="mb-0">Akool 3D & video solutions enpower you to create 3D videos and 3D objects with
-                                one click.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <Carousel white={true} />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <ThreeDimensionalApps whiteCarousel={true} />
 
         {/* Commerce Assets Editing Apps start  */}
-        <section id="assets_editing_apps" >
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="heading_text_section">
-                            <h3 className="mb-0">3D Commerce Apps</h3>
-                            <p className="mb-0">Akool 3D & video solutions enpower you to create 3D videos and 3D objects with
-                                one click.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <Carousel />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <CommerceApps />
 
         {/* Commerce Assets Editing Apps End  */}
         <section section id="ai_apps" >
