@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import TopApps from '../Components/TopApps';
 import ThreeDimensionalApps from '../Components/ThreeDimensionalApps';
 import CommerceApps from '../Components/CommerceApps';
+import MoreApps from '../Components/MoreApps';
 
 const HomeScreen = () =>
     <div>
@@ -211,24 +212,7 @@ const HomeScreen = () =>
         <CommerceApps />
 
         {/* Commerce Assets Editing Apps End  */}
-        <section section id="ai_apps" >
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-6">
-                        <div className="heading_text_section">
-                            <h3 className="mb-0">3D Commerce Apps</h3>
-                            <p className="mb-0 text-white">Akool 3D & video solutions enpower you to create 3D videos and 3D objects with
-                                one click.</p>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="col-lg-12">
-                        <Carousel white={true} />
-                    </div>
-                </div>
-            </div>
-        </section>
+        <MoreApps />
 
         {/* Customer Stories */}
         <section id="customer_stories_section">
