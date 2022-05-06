@@ -11,7 +11,7 @@ const CreationTools = () => {
     const [result, setResult] = useState([])
     const [search, setSearch] = useState('')
 
-    const searchProduct = (e) => {
+    const searchProduct = () => {
         emptyResults()
         products.forEach(product => {
             if (product.title.toLowerCase().includes(search.toLowerCase().trim())) {
@@ -102,8 +102,8 @@ const CreationTools = () => {
                                         </ul>
                                     </li>
                                 </ul>
-                                <button type="submit" title="search"><i className="fa fa-search"
-                                    aria-hidden="true"></i></button>
+                                {/* <button type="submit" title="search"><i className="fa fa-search"
+                                    aria-hidden="true"></i></button> */}
                             </div>
                         </div>
                     </div>
