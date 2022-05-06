@@ -8,15 +8,33 @@ const CreationTools = () => {
     const usedItems = JSON.parse(localStorage.getItem('used'))
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [result, setResult] = useState([])
+    const [search, setSearch] = useState('')
+
+    const searchProduct = (e) => {
+        emptyResults()
+        products.forEach(product => {
+            if (product.title.toLowerCase().includes(search.toLowerCase().trim())) {
+                setResult(result => [...result, product])
+            }
+        })
+    }
+    const emptyResults = () => setResult([])
 
     const getCreationTools = async () => {
         const { data } = await axios.get('/api/tools/creation')
         setProducts(data)
         setLoading(false)
+        setResult(data)
     }
+
     useEffect(() => {
         getCreationTools()
     }, [])
+
+    useEffect(() => {
+        searchProduct()
+    }, [search])
 
     return (
         <div className="used-area">
@@ -64,7 +82,7 @@ const CreationTools = () => {
                     </div>
                     <div className="row">
                         <div className="all_apps_nav">
-                            <input type="text" placeholder="Search" />
+                            <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" />
                             <div className="category__button">
                                 <ul className="category_parent">
                                     <li>
@@ -98,7 +116,7 @@ const CreationTools = () => {
                                 </Spinner>
                             </div>
                             :
-                            products.map(tool =>
+                            result.map(tool =>
                                 <div key={tool._id} className="col-lg-4 col-md-6">
                                     <a href={tool.link} target="_blank" rel="noopener noreferrer">
                                         <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} maintainHistory={true} />
