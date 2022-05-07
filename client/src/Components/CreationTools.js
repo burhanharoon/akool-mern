@@ -118,9 +118,7 @@ const CreationTools = () => {
                             :
                             result.map(tool =>
                                 <div key={tool._id} className="col-lg-4 col-md-6">
-                                    <a href={tool.link} target="_blank" rel="noopener noreferrer">
-                                        <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} maintainHistory={true} />
-                                    </a>
+                                    <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool.link} externalLink={true} maintainHistory={true} />
                                 </div>
                             )
                         }

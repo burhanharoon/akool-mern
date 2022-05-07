@@ -118,9 +118,7 @@ const RecognitionTools = () => {
                             result.map(tool =>
 
                                 <div key={tool._id} className="col-lg-4 col-md-6">
-                                    <a href={tool.link} target="_blank" rel="noopener noreferrer">
-                                        <Tool title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} />
-                                    </a>
+                                    <Tool title={tool.title} description={tool.description} rating={tool.rating} link={tool.link} externalLink={true} logo={tool.logo} />
                                 </div>
                             )
                         }

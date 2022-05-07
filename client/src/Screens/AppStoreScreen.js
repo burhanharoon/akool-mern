@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate } from "react-router-dom";
-import { Button, Modal, InputGroup, FormControl } from 'react-bootstrap'
+import { Button, Modal, InputGroup, FormControl, Form } from 'react-bootstrap'
 
 const AppStoreScreen = () => {
     const dispatch = useDispatch()
@@ -67,34 +67,13 @@ const AppStoreScreen = () => {
                             <div className='d-flex align-items-center justify-content-end gap-2 position-relative'>
                                 <img className='w-75 w-sm-100' src="/images/man.png" alt="" />
                                 <div className='text-white d-none d-sm-block fw-bold fs-6'>
-                                    <p className='text-white mb-2'>{user.name}</p>
+                                    <p className='text-white mb-2'>{user.firstName + ' ' + user.lastName}</p>
                                     <p className='text-white mb-2'>{user.email}</p>
                                     <div className='d-flex items-center gap-2'>
                                         <Button variant="primary" className='w-100' onClick={handleShow}>
                                             Profile
                                         </Button>
-
                                         <button onClick={handleLogout} type="button" className="btn btn-primary">Logout</button>
-                                        <Modal show={show} onHide={handleClose}>
-                                            <Modal.Header closeButton>
-                                                <Modal.Title>Profile</Modal.Title>
-                                            </Modal.Header>
-                                            <Modal.Body>
-                                                <InputGroup size="lg" className='mb-3'>
-                                                    <InputGroup.Text id="inputGroup-sizing-lg">Email</InputGroup.Text>
-                                                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" value={user.email} />
-                                                </InputGroup>
-                                                <InputGroup size="lg">
-                                                    <InputGroup.Text id="inputGroup-sizing-lg">Name</InputGroup.Text>
-                                                    <FormControl aria-label="Large" aria-describedby="inputGroup-sizing-sm" value={user.name} />
-                                                </InputGroup>
-                                            </Modal.Body>
-                                            <Modal.Footer>
-                                                <Button variant="secondary" onClick={handleClose}>
-                                                    Close
-                                                </Button>
-                                            </Modal.Footer>
-                                        </Modal>
                                     </div>
                                 </div>
                                 <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
@@ -110,6 +89,72 @@ const AppStoreScreen = () => {
                             </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
+                        {/* <Modal show={show} onHide={handleClose} dialogClassName="modal-90w">
+                            <Modal.Header closeButton>
+                                <Modal.Title className='text-center w-100'>Profile</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body className='d-flex gap-3 flex-column flex-md-row align-items-center justify-content-center w-100'>
+                                <div style={{ width: '10rem', height: '10rem', backgroundColor: '' }}>
+                                </div>
+                                <Form className='w-100'>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>First Name</Form.Label>
+                                        <Form.Control type="email" value={user.firstName} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>Last Name</Form.Label>
+                                        <Form.Control type="email" value={user.lastName} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>Email</Form.Label>
+                                        <Form.Control type="email" value={user.email} />
+                                    </Form.Group>
+                                </Form>
+
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal> */}
+
+                        <Modal
+                            size="lg"
+                            show={show}
+                            onHide={() => setShow(false)}
+                        >
+                            <Modal.Header closeButton>
+                                <Modal.Title className='text-center w-100'>Profile</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body className='d-flex gap-5 flex-column flex-md-row align-items-center justify-content-center w-100 '>
+                                <div className='d-flex flex-column items-center justify-content-center gap-2'>
+                                    <div style={{ width: '10rem', height: '10rem', backgroundColor: '#0000001a' }}>
+                                    </div>
+                                    <Button>Upload Picture</Button>
+                                </div>
+                                <Form className='w-100 w-md-50'>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>First Name</Form.Label>
+                                        <Form.Control type="email" value={user.firstName} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>Last Name</Form.Label>
+                                        <Form.Control type="email" value={user.lastName} />
+                                    </Form.Group>
+                                    <Form.Group className="mb-3">
+                                        <Form.Label>Email</Form.Label>
+                                        <Form.Control type="email" value={user.email} />
+                                    </Form.Group>
+                                </Form>
+
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
                         <Outlet />
                     </div>
                 </div>

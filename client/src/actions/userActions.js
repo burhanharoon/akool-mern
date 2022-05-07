@@ -5,7 +5,8 @@ export const saveUserInfo = (data) => async (dispatch) => {
     const temp = {
         id: _id,
         email,
-        name: firstName + ' ' + lastName
+        firstName,
+        lastName
     }
     localStorage.setItem('user', JSON.stringify(temp))
     dispatch({
