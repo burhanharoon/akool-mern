@@ -66,8 +66,7 @@ const AppsScreen = () => {
                         </div>
                         <div className="row">
                             <div className="all_apps_nav">
-                                <input type="text" placeholder="Search" />
-                                <div className="category__button d-flex w-100 gap-3 gap-sm-5 align-items-center justify-content-end justify-content-sm-center">
+                                <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" />                                <div className="category__button d-flex w-100 gap-3 gap-sm-5 align-items-center justify-content-end justify-content-sm-center">
                                     <select name="" id="" className='border-0'>
                                         <option value="">Popular</option>
                                     </select>
