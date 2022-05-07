@@ -4,19 +4,38 @@ import { Link } from 'react-router-dom'
 import Carousel from '../Components/Carousel'
 import Tool from '../Components/Tool'
 import { Spinner } from 'react-bootstrap'
+import TopApps from '../Components/TopApps'
 
 const AppsScreen = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
+    const [result, setResult] = useState([])
+    const [search, setSearch] = useState('')
+
+    const searchProduct = () => {
+        emptyResults()
+        products.forEach(product => {
+            if (product.title.toLowerCase().includes(search.toLowerCase().trim())) {
+                setResult(result => [...result, product])
+            }
+        })
+    }
+    const emptyResults = () => setResult([])
+
 
     const getProducts = async () => {
         const { data } = await axios.get('/api/tools/creation')
         setLoading(false)
         setProducts(data)
+        setResult(data)
     }
     useEffect(() => {
         getProducts()
     }, [])
+
+    useEffect(() => {
+        searchProduct()
+    }, [search])
 
     return (
         <>
@@ -48,7 +67,7 @@ const AppsScreen = () => {
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-12">
-                                <Carousel />
+                                {/* <TopApps /> */}
                             </div>
                         </div>
                     </div>
@@ -70,7 +89,7 @@ const AppsScreen = () => {
                                     <select name="" id="" className='border-0'>
                                         <option value="">Popular</option>
                                     </select>
-                                    <button type="submit" className='m-0' title="search"><i className="fa fa-search" aria-hidden="true"></i></button>
+                                    {/* <button type="submit" className='m-0' title="search"><i className="fa fa-search" aria-hidden="true"></i></button> */}
                                 </div>
                             </div>
                         </div>
@@ -83,11 +102,9 @@ const AppsScreen = () => {
                                     </Spinner>
                                 </div>
                                 :
-                                products.map(item =>
+                                result.map(item =>
                                     <div key={item._id} className="col-lg-4 col-md-6">
-                                        <Link to={item.title}>
-                                            <Tool title={item.title} logo={item.logo} description={item.description} rating={item.rating} maintainHistory={false} />
-                                        </Link>
+                                        <Tool title={item.title} logo={item.logo} description={item.description} rating={item.rating} link={item.title} maintainHistory={false} />
                                     </div>
                                 )
                             }

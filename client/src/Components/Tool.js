@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Tool = ({ title, logo, description, rating, link, maintainHistory = true }) => {
 
@@ -27,13 +29,17 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true }
     return (
         <div onClick={addToUsed}>
             <div className="slider_card">
-                <div className="top_section">
+                <div className="top_section" style={{ alignItems: 'self-end', position: 'relative' }}>
                     <div className="image_section">
                         <img src={logo} alt='logo' />
                     </div>
-                    <div className="heart_icon_section">
+                    {/* className="heart_icon_section" */}
+                    <div style={{ position: 'absolute', border: '1px solid #000C3E', top: '0', right: '1rem', borderRadius: '50%', width: '25px', height: '25px', justifyContent: 'center', display: 'flex', alignItems: 'center', color: 'black' }}>
                         <i className="fa fa-heart"></i>
                     </div>
+                    <Link to={link}>
+                        <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                    </Link>
                 </div>
                 <div className="bottom_section">
                     <h3 className='launch-h3'>{title}</h3>
