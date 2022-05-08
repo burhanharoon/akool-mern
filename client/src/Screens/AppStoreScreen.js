@@ -89,36 +89,6 @@ const AppStoreScreen = () => {
                             </div>
                             <div onClick={() => { showNav ? setShowNav(false) : setShowNav(true) }} className={showNav ? 'modal-backdrop fade show' : 'd-none'}></div>
                         </div>
-                        {/* <Modal show={show} onHide={handleClose} dialogClassName="modal-90w">
-                            <Modal.Header closeButton>
-                                <Modal.Title className='text-center w-100'>Profile</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body className='d-flex gap-3 flex-column flex-md-row align-items-center justify-content-center w-100'>
-                                <div style={{ width: '10rem', height: '10rem', backgroundColor: '' }}>
-                                </div>
-                                <Form className='w-100'>
-                                    <Form.Group className="mb-3">
-                                        <Form.Label>First Name</Form.Label>
-                                        <Form.Control type="email" value={user.firstName} />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3">
-                                        <Form.Label>Last Name</Form.Label>
-                                        <Form.Control type="email" value={user.lastName} />
-                                    </Form.Group>
-                                    <Form.Group className="mb-3">
-                                        <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" value={user.email} />
-                                    </Form.Group>
-                                </Form>
-
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Close
-                                </Button>
-                            </Modal.Footer>
-                        </Modal> */}
-
                         <Modal
                             size="lg"
                             show={show}
