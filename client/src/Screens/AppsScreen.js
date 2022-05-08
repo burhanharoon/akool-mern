@@ -5,6 +5,7 @@ import Carousel from '../Components/Carousel'
 import Tool from '../Components/Tool'
 import { Spinner } from 'react-bootstrap'
 import TopApps from '../Components/TopApps'
+import Helmet from 'react-helmet'
 
 const AppsScreen = () => {
     const [products, setProducts] = useState([])
@@ -39,6 +40,9 @@ const AppsScreen = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Products</title>
+            </Helmet>
             <section className="banner_two launch_banner_two">
                 <div className="container">
                     <div className="row">
@@ -121,14 +125,14 @@ const AppsScreen = () => {
             {/* Recommended Apps slider part end  */}
             <section className="last_part d-flex">
                 <div className="image_section">
-                    <img src="" alt="lunch" className="img-fluid w-100 h-100" />
+                    <img src="/images/lunch_last.png" alt="lunch" className="img-fluid w-100 h-100" />
                 </div>
                 <div className="last_text_part">
                     <h3 className='launch-h3'>Build With Akool</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br /> incididunt ut labore et dolore magna aliqua. </p>
                     <div className="buttons d-flex">
-                        <a href="true">Register</a>
-                        <a href="true">Login</a>
+                        <Link to="/register">Register</Link>
+                        <Link to="/login">Login</Link>
                     </div>
                 </div>
             </section>
@@ -157,7 +161,7 @@ const AppsScreen = () => {
                                         </ul>
                                     </div>
                                     <div className="footer_register_btn">
-                                        <a href="true">Register</a>
+                                        <Link to='/register'>Register</Link>
                                     </div>
                                 </div>
 

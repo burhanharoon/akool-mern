@@ -4,11 +4,13 @@ import { useParams } from 'react-router-dom'
 import Faq from '../Components/Faq'
 import TestimonialCarousel from '../Components/TestimonialCarousel'
 import { Spinner } from 'react-bootstrap'
+import { Helmet } from 'react-helmet'
 
 const AppIntroScreen = () => {
     const { title } = useParams()
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
+
 
     const getProducts = async () => {
         const { data } = await axios.post(`/api/tools/find/${title}`)
@@ -24,6 +26,9 @@ const AppIntroScreen = () => {
     return (
 
         <div>
+            <Helmet>
+                <title>{title}</title>
+            </Helmet>
             {loading ?
                 <div style={{ height: '100vh' }} className='d-flex justify-content-center align-items-center'>
                     <Spinner animation="border" role="status">

@@ -9,9 +9,13 @@ import TopApps from '../Components/TopApps';
 import ThreeDimensionalApps from '../Components/ThreeDimensionalApps';
 import CommerceApps from '../Components/CommerceApps';
 import MoreApps from '../Components/MoreApps';
+import Helmet from 'react-helmet';
 
 const HomeScreen = () =>
     <div>
+        <Helmet>
+            <title>Akool</title>
+        </Helmet>
         <Navbar />
         <section id="banner">
             <div className="container">

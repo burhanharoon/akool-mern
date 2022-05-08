@@ -5,6 +5,7 @@ import { Navigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { saveUserInfo } from '../actions/userActions'
 import { useSelector } from 'react-redux'
+import Helmet from 'react-helmet'
 
 
 const LoginScreen = () => {
@@ -35,6 +36,9 @@ const LoginScreen = () => {
     if (userLoggedIn)
         return <Navigate to='/' />
     return <div className="hero-aera login-hero">
+        <Helmet>
+            <title>Login</title>
+        </Helmet>
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">

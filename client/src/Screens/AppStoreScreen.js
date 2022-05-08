@@ -3,12 +3,23 @@ import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { Button, Modal, InputGroup, FormControl, Form } from 'react-bootstrap'
+import Helmet from 'react-helmet';
 
 const AppStoreScreen = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
+
+
     const [showNav, setShowNav] = useState(false)
     const [showNavDropdown, setShowNavDropdown] = useState(false)
+    const [img, setImg] = useState();
+
+    const onImageChange = (e) => {
+        const [file] = e.target.files;
+        setImg(URL.createObjectURL(file));
+    };
+
+
     const user = useSelector(state => state.userInfo)
     const handleLogout = () => {
         dispatch(logoutUser())
@@ -19,8 +30,12 @@ const AppStoreScreen = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
     return (
         <>
+            <Helmet>
+                <title>Apps</title>
+            </Helmet>
             <div className="dash-area" >
                 <div className="dash-fl">
                     <div className="dash-left">
@@ -98,9 +113,11 @@ const AppStoreScreen = () => {
                                 <Modal.Title className='text-center w-100'>Profile</Modal.Title>
                             </Modal.Header>
                             <Modal.Body className='d-flex gap-5 flex-column flex-md-row align-items-center justify-content-center w-100 '>
-                                <div className='d-flex flex-column items-center justify-content-center gap-2'>
-                                    <div style={{ width: '10rem', height: '10rem', backgroundColor: '#0000001a' }}>
+                                <div className='d-flex flex-column align-items-center justify-content-center gap-2'>
+                                    <div style={{ width: '10rem', height: '10rem', }}>
+                                        <img src={img} alt='' className='w-100 h-100' />
                                     </div>
+                                    <input type="file" id="img" name="img" accept="image/*" onChange={onImageChange} />
                                     <Button>Upload Picture</Button>
                                 </div>
                                 <Form className='w-100 w-md-50'>
