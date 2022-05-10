@@ -43,7 +43,7 @@ const AppStoreScreen = () => {
                             <Link title="footer logo" to='/'><img src="/images/footer_logo.png" alt="footer logo" /></Link>
                         </div>
                         <div className="dash-menu">
-                            <ul>
+                            <ul className='d-flex flex-column align-items-start px-3'>
                                 <li><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
                                 <li><a href="https://market.akool.com/"><img src="/images/application.png" alt="" /> Data Marketplace</a></li>
                                 <li><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>

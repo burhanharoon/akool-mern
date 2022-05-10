@@ -26,13 +26,13 @@ const App = () => {
             <Route index element={<CreationTools />} />
             <Route path='recognition' element={<RecognitionTools />} />
           </Route> :
-          <Route path='/' >
-            <Route index element={<HomeScreen />} />
+          <Route path='/' element={<Navbar hideNavItems />}>
+            <Route index element={<AppsScreen />} />
+            <Route path=':title' element={<AppIntroScreen />} />
           </Route>
         }
-        <Route path='/apps' element={<Navbar hideNavItems />}>
-          <Route index element={<AppsScreen />} />
-          <Route path=':title' element={<AppIntroScreen />} />
+        <Route path='/home' >
+          <Route index element={<HomeScreen />} />
         </Route>
         <Route path='/' element={<Navbar hideNavItems />}>
           <Route path='login' element={<LoginScreen />} />

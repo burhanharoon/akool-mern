@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Carousel from '../Components/Carousel'
 import Tool from '../Components/Tool'
-import { Spinner } from 'react-bootstrap'
+import { Alert, Spinner } from 'react-bootstrap'
 import TopApps from '../Components/TopApps'
 import Helmet from 'react-helmet'
 
@@ -12,6 +12,14 @@ const AppsScreen = () => {
     const [loading, setLoading] = useState(true)
     const [result, setResult] = useState([])
     const [search, setSearch] = useState('')
+    const [maxProductsAlert, setMaxProductsAlert] = useState(false)
+
+    const showAlert = () => {
+        setTimeout(() => {
+            setMaxProductsAlert(false)
+        }, 1000);
+        setMaxProductsAlert(true)
+    }
 
     const searchProduct = () => {
         emptyResults()
@@ -115,7 +123,12 @@ const AppsScreen = () => {
                         </div>
                         <div className="row">
                             <div className="see_more_btn text-center">
-                                <a href="true" className="view_more_slider_card">View More <img src="/images/slider_right_arrow.png" alt="alider arrow" /></a>
+                                <div onClick={showAlert} style={{ cursor: 'pointer' }} className="view_more_slider_card">View More <img src="/images/slider_right_arrow.png" alt="slider arrow" /></div>
+                                {maxProductsAlert ?
+                                    <Alert variant={'danger'}>
+                                        Maximum Products limit reached!
+                                    </Alert> : ''
+                                }
                             </div>
                         </div>
                     </div>

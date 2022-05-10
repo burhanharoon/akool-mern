@@ -82,29 +82,7 @@ const CreationTools = () => {
                     </div>
                     <div className="row">
                         <div className="all_apps_nav">
-                            <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" />
-                            <div className="category__button">
-                                <ul className="category_parent">
-                                    <li>
-                                        <a href="true" className="category__child_button">Categories <i
-                                            className="fa fa-chevron-down" aria-hidden="true"></i></a>
-
-                                        <ul className="category_dropdown">
-                                            <li>
-                                                <a href="true">item</a>
-                                            </li>
-                                            <li>
-                                                <a href="true">item</a>
-                                            </li>
-                                            <li>
-                                                <a href="true">item</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                {/* <button type="submit" title="search"><i className="fa fa-search"
-                                    aria-hidden="true"></i></button> */}
-                            </div>
+                            <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" className='w-100' />
                         </div>
                     </div>
 
@@ -131,7 +109,7 @@ const CreationTools = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
