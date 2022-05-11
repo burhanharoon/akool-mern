@@ -1,10 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import Carousel from '../Components/Carousel'
 import Tool from '../Components/Tool'
-import { Alert, Spinner } from 'react-bootstrap'
-import TopApps from '../Components/TopApps'
+import { Spinner } from 'react-bootstrap'
 import Helmet from 'react-helmet'
 import ViewMore from '../Components/ViewMore'
 

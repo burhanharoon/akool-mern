@@ -1,6 +1,5 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
-import AccordionItem from 'react-bootstrap/esm/AccordionItem'
 import { Link } from 'react-router-dom'
 
 const Tool = ({ title, logo, description, rating, link, maintainHistory = true, externalLink = false }) => {

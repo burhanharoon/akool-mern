@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
-import { saveUserInfo } from '../actions/userActions'
 import { useSelector } from 'react-redux'
 import Helmet from 'react-helmet'
 

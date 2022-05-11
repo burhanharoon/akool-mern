@@ -39,7 +39,6 @@ const App = () => {
           <Route path='register' element={<RegisterScreen />} />
         </Route>
       </Routes>
-
     </BrowserRouter>
   );
 }

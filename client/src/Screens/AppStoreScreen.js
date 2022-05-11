@@ -91,7 +91,7 @@ const AppStoreScreen = () => {
                                 </div>
                                 <span onClick={() => { showNavDropdown ? setShowNavDropdown(false) : setShowNavDropdown(true) }}><i className="fa fa-chevron-down d-sm-none" style={{ color: "#fff" }}></i></span>
                                 <div className={showNavDropdown ? 'position-absolute end-0 bg-light p-2 rounded shadow d-sm-none' : 'position-absolute end-0 bg-light p-2 rounded d-none'} style={{ top: "4rem" }}>
-                                    <p className='mb-2'>{user.name}</p>
+                                    <p className='mb-2'>{user.firstName + ' ' + user.lastName}</p>
                                     <p className='mb-2'>{user.email}</p>
                                     <Button variant="primary" className='w-100 mb-1' onClick={handleShow}>
                                         Profile
