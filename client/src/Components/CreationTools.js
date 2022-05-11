@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Spinner } from 'react-bootstrap'
+import { Alert, Spinner } from 'react-bootstrap'
 import axios from 'axios';
 import Tool from './Tool';
+import ViewMore from './ViewMore';
 
 const CreationTools = () => {
 
@@ -10,6 +11,7 @@ const CreationTools = () => {
     const [loading, setLoading] = useState(true)
     const [result, setResult] = useState([])
     const [search, setSearch] = useState('')
+
 
     const searchProduct = () => {
         emptyResults()
@@ -101,15 +103,10 @@ const CreationTools = () => {
                             )
                         }
                     </div>
-                    <div className="row">
-                        <div className="see_more_btn">
-                            <a href="true" className="view_more_slider_card">View More <img
-                                src="/images/slider_right_arrow.png" alt="alider arrow" /></a>
-                        </div>
-                    </div>
+                    <ViewMore />
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 

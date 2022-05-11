@@ -6,20 +6,13 @@ import Tool from '../Components/Tool'
 import { Alert, Spinner } from 'react-bootstrap'
 import TopApps from '../Components/TopApps'
 import Helmet from 'react-helmet'
+import ViewMore from '../Components/ViewMore'
 
 const AppsScreen = () => {
     const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const [result, setResult] = useState([])
     const [search, setSearch] = useState('')
-    const [maxProductsAlert, setMaxProductsAlert] = useState(false)
-
-    const showAlert = () => {
-        setTimeout(() => {
-            setMaxProductsAlert(false)
-        }, 1000);
-        setMaxProductsAlert(true)
-    }
 
     const searchProduct = () => {
         emptyResults()
@@ -97,12 +90,7 @@ const AppsScreen = () => {
                         </div>
                         <div className="row">
                             <div className="all_apps_nav">
-                                <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" />                                <div className="category__button d-flex w-100 gap-3 gap-sm-5 align-items-center justify-content-end justify-content-sm-center">
-                                    <select name="" id="" className='border-0'>
-                                        <option value="">Popular</option>
-                                    </select>
-                                    {/* <button type="submit" className='m-0' title="search"><i className="fa fa-search" aria-hidden="true"></i></button> */}
-                                </div>
+                                <input onChange={(e) => { setSearch(e.target.value) }} value={search} type="text" placeholder="Search" className='w-100' />
                             </div>
                         </div>
 
@@ -121,16 +109,7 @@ const AppsScreen = () => {
                                 )
                             }
                         </div>
-                        <div className="row">
-                            <div className="see_more_btn text-center">
-                                <div onClick={showAlert} style={{ cursor: 'pointer' }} className="view_more_slider_card">View More <img src="/images/slider_right_arrow.png" alt="slider arrow" /></div>
-                                {maxProductsAlert ?
-                                    <Alert variant={'danger'}>
-                                        Maximum Products limit reached!
-                                    </Alert> : ''
-                                }
-                            </div>
-                        </div>
+                        <ViewMore />
                     </div>
                 </div>
             </section>

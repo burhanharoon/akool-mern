@@ -2,13 +2,12 @@ import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
 import { Outlet, Link, useNavigate, NavLink } from "react-router-dom";
-import { Button, Modal, InputGroup, FormControl, Form } from 'react-bootstrap'
+import { Button, Modal, Form } from 'react-bootstrap'
 import Helmet from 'react-helmet';
 
 const AppStoreScreen = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
-
 
     const [showNav, setShowNav] = useState(false)
     const [showNavDropdown, setShowNavDropdown] = useState(false)
@@ -18,7 +17,6 @@ const AppStoreScreen = () => {
         const [file] = e.target.files;
         setImg(URL.createObjectURL(file));
     };
-
 
     const user = useSelector(state => state.userInfo)
     const handleLogout = () => {

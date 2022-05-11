@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Spinner } from 'react-bootstrap'
 import axios from 'axios';
 import Tool from './Tool';
+import ViewMore from './ViewMore';
 
 
 const RecognitionTools = () => {
@@ -101,12 +102,8 @@ const RecognitionTools = () => {
                             )
                         }
                     </div>
-                    <div className="row">
-                        <div className="see_more_btn">
-                            <a href="true" className="view_more_slider_card">View More <img
-                                src="/images/slider_right_arrow.png" alt="alider arrow" /></a>
-                        </div>
-                    </div>
+
+                    <ViewMore />
                 </div>
             </div>
         </div>
