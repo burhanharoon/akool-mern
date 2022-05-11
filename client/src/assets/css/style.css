@@ -971,8 +971,15 @@ ol {
     height: 90px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     position: relative;
+    padding: 1rem;
+}
+
+@media (max-width:960px) {
+    .dash-menu li a {
+        width: max-content;
+    }
 }
 
 .dash-menu ul li a img {
@@ -992,6 +999,8 @@ ol {
 
 .dash-menu li {
     position: relative;
+    width: 100%;
+    border-radius: 10px;
 }
 
 
@@ -1258,4 +1267,9 @@ ol {
 .log-btn {
     display: flex;
     align-items: center;
+}
+
+.active {
+    background-color: #eef3ff;
+    border-radius: 10px;
 }

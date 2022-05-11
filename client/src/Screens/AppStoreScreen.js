@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { useSelector, useDispatch } from 'react-redux'
-import { Outlet, Link, useNavigate } from "react-router-dom";
+import { Outlet, Link, useNavigate, NavLink } from "react-router-dom";
 import { Button, Modal, InputGroup, FormControl, Form } from 'react-bootstrap'
 import Helmet from 'react-helmet';
 
@@ -44,9 +44,9 @@ const AppStoreScreen = () => {
                         </div>
                         <div className="dash-menu">
                             <ul className='d-flex flex-column align-items-start px-3'>
-                                <li><Link to="/"><img src="/images/application.png" alt="" /> Creation</Link></li>
+                                <li><NavLink exact activeClassName='active' to="/"><img src="/images/application.png" alt="" /> Creation</NavLink></li>
                                 <li><a href="https://market.akool.com/"><img src="/images/application.png" alt="" /> Data Marketplace</a></li>
-                                <li><Link to="/recognition"><img src="/images/application.png" alt="" /> Recognition</Link></li>
+                                <li><NavLink exact activeClassName='active' to="/recognition"><img src="/images/application.png" alt="" /> Recognition</NavLink></li>
                             </ul>
                         </div>
                     </div>
@@ -69,10 +69,10 @@ const AppStoreScreen = () => {
 
                                     <div className="dash-menu">
                                         <ul onClick={() => { setShowNav(false) }}>
-                                            <li ><Link to="/"><img src="/images/application.png" alt="" />
-                                                Creation</Link></li>
+                                            <li ><NavLink exact activeClassName='active ' to="/"><img src="/images/application.png" alt="" />
+                                                Creation</NavLink></li>
                                             <li><a href="https://market.akool.com/"><img src="/images/application.png" alt="" />Data Marketplace</a></li>
-                                            <li><Link to="/recognition"><img src="/images/application.png" alt="" />Recognition</Link></li>
+                                            <li><NavLink exact activeClassName='active' to="/recognition"><img src="/images/application.png" alt="" />Recognition</NavLink></li>
                                         </ul>
                                     </div>
 
