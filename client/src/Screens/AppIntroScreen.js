@@ -84,7 +84,7 @@ const AppIntroScreen = () => {
                                         <p>{product.about}</p>
                                     </div>
                                     <div className="about_image_part">
-                                        <img src="/images/app_intro_about.png" alt="about" className="img-fluid" />
+                                        <img src={product.aboutImage} alt="about" className="img-fluid" />
                                     </div>
 
                                 </div>
@@ -97,7 +97,7 @@ const AppIntroScreen = () => {
                                 <div className="row">
                                     <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
                                         <div className="about_image_part">
-                                            <img src="/images/about_section_two.png" alt="about" className="img-fluid" />
+                                            <img src={product.goalImage} alt="about" className="img-fluid" />
                                         </div>
                                         <div className="about_text_part">
                                             <h3 className='app-intro-h3'>What's our main goal?</h3>
@@ -208,33 +208,18 @@ const AppIntroScreen = () => {
                         <div className="container-fluid">
                             <div className="row">
                                 <div className="feature_cards">
-                                    <div className="feature_card d-flex align-items-start">
-                                        <div className="image_section">
-                                            <img src="/images/app_intro_feature.png" alt="feature" />
-                                        </div>
-                                        <div className="text_section">
-                                            <h3 className='app-intro-h3'>Feature 1</h3>
-                                            <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
-                                        </div>
-                                    </div>
-                                    <div className="feature_card d-flex align-items-start ml-22">
-                                        <div className="image_section">
-                                            <img src="/images/app_intro_feature.png" alt="feature" />
-                                        </div>
-                                        <div className="text_section">
-                                            <h3 className='app-intro-h3'>Feature 1</h3>
-                                            <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
-                                        </div>
-                                    </div>
-                                    <div className="feature_card d-flex align-items-start ml-22">
-                                        <div className="image_section">
-                                            <img src="/images/app_intro_feature.png" alt="feature" />
-                                        </div>
-                                        <div className="text_section">
-                                            <h3 className='app-intro-h3'>Feature 1</h3>
-                                            <p>Utilize deep learning to fully automate content Mi quis hendrerit dolor magna. </p>
-                                        </div>
-                                    </div>
+                                    {
+                                        product.features && product.features.map((feature, index) =>
+                                            <div className={"feature_card d-flex align-items-start m-2"}>
+                                                <div className="image_section">
+                                                    <img src="/images/app_intro_feature.png" alt="feature" />
+                                                </div>
+                                                <div className="text_section">
+                                                    <h3 className='app-intro-h3'>{feature.title}</h3>
+                                                    <p>{feature.description}</p>
+                                                </div>
+                                            </div>)
+                                    }
 
                                 </div>
 

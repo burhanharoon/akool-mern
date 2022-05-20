@@ -6,7 +6,9 @@ export const toolDetails = [
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        aboutImage: '/images/app_intro_about.png',
         goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        goalImage: '/images/about_section_two.png',
         testimonials: [
             {
                 image: '/images/app_intro_content.png',
@@ -31,6 +33,20 @@ export const toolDetails = [
             {
                 question: 'What is this app?',
                 answer: " It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow."
+            }
+        ],
+        features: [
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
             }
         ]
     },
@@ -41,7 +57,9 @@ export const toolDetails = [
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        aboutImage: '/images/app_intro_about.png',
         goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        goalImage: '/images/about_section_two.png',
         testimonials: [
             {
                 image: '/images/app_intro_content.png',
@@ -66,6 +84,20 @@ export const toolDetails = [
             {
                 question: 'What is this app?',
                 answer: " It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow."
+            }
+        ],
+        features: [
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
             }
         ]
     },
@@ -76,7 +108,9 @@ export const toolDetails = [
         rating: 5,
         downloadLink: '/',
         about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        aboutImage: '/images/app_intro_about.png',
         goal: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor viverra sollicitudin. Pellentesque velit tellus, cursus at scelerisque nec, elementum at diam",
+        goalImage: '/images/about_section_two.png',
         testimonials: [
             {
                 image: '/images/app_intro_content.png',
@@ -101,6 +135,20 @@ export const toolDetails = [
             {
                 question: 'What is this app?',
                 answer: " It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow."
+            }
+        ],
+        features: [
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
+            },
+            {
+                title: 'Feature',
+                description: 'Utilize deep learning to fully automate content Mi quis hendrerit dolor magna.'
             }
         ]
     },
