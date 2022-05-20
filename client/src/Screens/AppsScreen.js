@@ -11,6 +11,11 @@ const AppsScreen = () => {
     const [loading, setLoading] = useState(true)
     const [result, setResult] = useState([])
     const [search, setSearch] = useState('')
+    let endpoints = [
+        '/api/tools/creation',
+        '/api/tools/creation',
+    ];
+
 
     const searchProduct = () => {
         emptyResults()
@@ -24,10 +29,17 @@ const AppsScreen = () => {
 
 
     const getProducts = async () => {
-        const { data } = await axios.get('/api/tools/creation')
-        setLoading(false)
-        setProducts(data)
-        setResult(data)
+        // const { data } = await axios.get('/api/tools/creation')
+        let allProducts = []
+        await endpoints.forEach(async (url) => {
+            const { data } = await axios.get(url)
+            console.log(data);
+            // allProducts = [...allProducts, ...data]
+        })
+        console.log(allProducts);
+        // setLoading(false)
+        // setProducts(data)
+        // setResult(data)
     }
     useEffect(() => {
         getProducts()

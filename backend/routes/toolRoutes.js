@@ -36,6 +36,13 @@ router.post('/find/:title', async (req, res) => {
     }
 })
 
+router.get('/all', async (req, res) => {
+    let allProducts = []
+    const creationTools = await CreationTool.find({})
+    const recognitionTools = await RecognitionTool.find({})
+    allProducts = [...creationTools, ...recognitionTools]
+    res.send(allProducts)
+})
 
 router.get("/", (req, res) => {
     res.send("Sending Tool Routes")
