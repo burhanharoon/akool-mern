@@ -1,8 +1,11 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
 const Tool = ({ title, logo, description, rating, link, maintainHistory = true, externalLink = false }) => {
+
+    const user = useSelector(state => state.userInfo)
 
     const addToUsed = () => {
         if (maintainHistory) {
@@ -42,18 +45,22 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                     <div className="image_section">
                         <img src={logo} alt='logo' />
                     </div>
-                    {/* className="heart_icon_section" */}
                     <div style={{ position: 'absolute', border: '1px solid #000C3E', top: '0', right: '1rem', borderRadius: '50%', width: '25px', height: '25px', justifyContent: 'center', display: 'flex', alignItems: 'center', color: 'black' }}>
                         <i className="fa fa-heart"></i>
                     </div>
-                    {externalLink ?
-                        <a href={link} target='_blank' rel="noreferrer">
-                            <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                        </a> :
-                        <Link to={link}>
-                            <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                        </Link>
+                    {
+                        user &&
+                        <>
+                            {externalLink ?
+                                <a href={link} target='_blank' rel="noreferrer">
+                                    <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                                </a> :
+                                <Link to={link}>
+                                    <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                                </Link>
 
+                            }
+                        </>
                     }
                 </div>
                 <div className="bottom_section">
@@ -65,9 +72,8 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                             {Array(rating).fill(1).map(x => <span><i className="fa fa-star" aria-hidden="true"></i></span>)}
                         </div>
                     </div>
-                    <Link to={title}>
-                        <Button variant="dark" className='my-2'>Details</Button>
-
+                    <Link to={title} className='w-100'>
+                        <Button className='my-2 w-100 bg-primary bg-gradient'>Details</Button>
                     </Link>
                 </div>
             </div>

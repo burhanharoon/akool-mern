@@ -16,7 +16,7 @@ const AppIntroScreen = () => {
     const getProducts = async () => {
         const { data } = await axios.post(`/api/tools/find/${title}`)
         setProduct(data)
-        setLoading(false)
+        data && setLoading(false)
     }
     useEffect(() => {
         window.scrollTo(0, 0)
