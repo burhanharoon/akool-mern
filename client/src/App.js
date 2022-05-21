@@ -28,9 +28,9 @@ const App = () => {
           </Route> :
           <Route path='/' element={<Navbar hideNavItems />}>
             <Route index element={<AppsScreen />} />
-            <Route path=':title' element={<AppIntroScreen />} />
           </Route>
         }
+        <Route path=':title' element={<AppIntroScreen />} />
         <Route path='/home' >
           <Route index element={<HomeScreen />} />
         </Route>

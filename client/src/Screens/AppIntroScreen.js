@@ -5,6 +5,7 @@ import Faq from '../Components/Faq'
 import TestimonialCarousel from '../Components/TestimonialCarousel'
 import { Spinner } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
+import Navbar from '../Components/Navbar'
 
 const AppIntroScreen = () => {
     const { title } = useParams()
@@ -37,6 +38,7 @@ const AppIntroScreen = () => {
                 </div>
                 :
                 <div>
+                    <Navbar hideNavItems />
                     <section className="banner_two">
                         <div className="container banner_container">
                             <div className="row">

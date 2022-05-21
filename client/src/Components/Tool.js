@@ -65,6 +65,10 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                             {Array(rating).fill(1).map(x => <span><i className="fa fa-star" aria-hidden="true"></i></span>)}
                         </div>
                     </div>
+                    <Link to={title}>
+                        <Button variant="dark" className='my-2'>Details</Button>
+
+                    </Link>
                 </div>
             </div>
         </div>
