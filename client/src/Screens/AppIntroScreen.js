@@ -1,22 +1,24 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Faq from '../Components/Faq'
 import TestimonialCarousel from '../Components/TestimonialCarousel'
 import { Spinner } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
 import Navbar from '../Components/Navbar'
+import Error from '../Components/Error'
 
 const AppIntroScreen = () => {
     const { title } = useParams()
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(false)
 
 
     const getProducts = async () => {
         const { data } = await axios.post(`/api/tools/find/${title}`)
-        setProduct(data)
-        data && setLoading(false)
+        data ? setProduct(data) : setError(true)
+        setLoading(false)
     }
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -38,213 +40,179 @@ const AppIntroScreen = () => {
                 </div>
                 :
                 <div>
-                    <Navbar hideNavItems />
-                    <section className="banner_two">
-                        <div className="container banner_container">
-                            <div className="row">
-                                <div className="col-lg-10">
-                                    <div className="banner_text">
-                                        <h3 className='app-intro-h3'>{product.title}</h3>
-                                        <p>{product.description}</p>
-                                        <div className="rating_section d-flex align-items-baseline">
+                    {error ? <Error content={<Fragment>We are sorry, but the product "<strong>{title}</strong>" doesn't have any details yet! Be sure to check that in future :{')'}</Fragment>} /> :
+                        <>
+                            <Navbar hideNavItems />
+                            <section className="banner_two">
+                                <div className="container banner_container">
+                                    <div className="row">
+                                        <div className="col-lg-10">
+                                            <div className="banner_text">
+                                                <h3 className='app-intro-h3'>{product.title}</h3>
+                                                <p>{product.description}</p>
+                                                <div className="rating_section d-flex align-items-baseline">
 
-                                            <div className="star_section">
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
-                                                <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    <div className="star_section">
+                                                        <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                        <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                        <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                        <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                        <span><i className="fa fa-star" aria-hidden="true"></i></span>
+                                                    </div>
+                                                    <h5 className="mb-0">5.0</h5>
+                                                </div>
                                             </div>
-                                            <h5 className="mb-0">5.0</h5>
+
+                                        </div>
+
+                                        <div className="banner_content_image">
+                                            <img src={product.logo} alt=" app intro" className="img-fluid w-100" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section className="app_about_section">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="download_btn m-auto text-center">
+                                            <a href={product.downloadLink} title="download">Download an App</a>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <div className="banner_content_image">
-                                    <img src={product.logo} alt=" app intro" className="img-fluid w-100" />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+                                <div className="app_intro_custom_container">
+                                    <div className="row">
+                                        <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
+                                            <div className="about_text_part">
+                                                <h3 className='app-intro-h3'>About the App</h3>
+                                                <p>{product.about}</p>
+                                            </div>
+                                            <div className="about_image_part">
+                                                <img src={product.aboutImage} alt="about" className="img-fluid" />
+                                            </div>
 
-                    <section className="app_about_section">
-                        <div className="container">
-                            <div className="row">
-                                <div className="download_btn m-auto text-center">
-                                    <a href={product.downloadLink} title="download">Download an App</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div className="app_intro_custom_container">
-                            <div className="row">
-                                <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
-                                    <div className="about_text_part">
-                                        <h3 className='app-intro-h3'>About the App</h3>
-                                        <p>{product.about}</p>
-                                    </div>
-                                    <div className="about_image_part">
-                                        <img src={product.aboutImage} alt="about" className="img-fluid" />
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="about_section_two">
-                        <div className="app_intro_custom_container_two">
-                            <div className="row">
-                                <div className="row">
-                                    <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
-                                        <div className="about_image_part">
-                                            <img src={product.goalImage} alt="about" className="img-fluid" />
-                                        </div>
-                                        <div className="about_text_part">
-                                            <h3 className='app-intro-h3'>What's our main goal?</h3>
-                                            <p>{product.goal}</p>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section id="testmonial">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-6 m-auto">
-                                    <div className="heading_text text-center">
-                                        <h3 className='app-intro-h3'>Testimonials</h3>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-lg-12">
-                                    <TestimonialCarousel testimonials={product.testimonials} />
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </section>
-
-                    <section id="faq_section">
-
-                        <div className="container">
-
-                            <div className="row">
-                                <div className="col-lg-6 m-auto">
-                                    <div className="heading_text text-center">
-                                        <h3 className='app-intro-h3'>FAQs</h3>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div className="row">
-                                <div className="col-lg-10 m-auto">
-                                    {product.faq.map((faq, index) =>
-                                        <Faq key={index} number={index} question={faq.question} answer={faq.answer} />
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-
-
-                    <section className="app_intro_feature">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-6 m-auto">
-                                    <div className="heading_text text-center">
-                                        <h3 className='app-intro-h3'>Why Akool Marketplace</h3>
-                                        <div></div>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <!-- <div className="row">
-                <div className="col-lg-4">
-                    <div className="feature_card d-flex align-items-start">
-                        <div className="image_section">
-                            <img src="/images/feature_card_image.png" alt="feature">
-                        </div>
-                        <div className="text_section">
-                            <h3 className='app-intro-h3'>Feature 1</h3>
-                            <p>Lorem ipsum dolor sit amet<br>, consectetur adipiscing elit, sed do<br> eiusmod tempor incididunt ut labore et<br> dolore magna aliqua. </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-4">
-                    <div className="feature_card d-flex align-items-start">
-                        <div className="image_section">
-                            <img src="/images/feature_card_image.png" alt="feature">
-                        </div>
-                        <div className="text_section">
-                            <h3 className='app-intro-h3'>Feature 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="col-lg-4">
-                    <div className="feature_card d-flex align-items-start">
-                        <div className="image_section">
-                            <img src="/images/feature_card_image.png" alt="feature">
-                        </div>
-                        <div className="text_section">
-                            <h3 className='app-intro-h3'>Feature 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        </div>
-                    </div>
-                </div>
-            </div> --> */}
-
-
-                        </div>
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="feature_cards">
-                                    {
-                                        product.features && product.features.map((feature, index) =>
-                                            <div className={"feature_card d-flex align-items-start m-2"}>
-                                                <div className="image_section">
-                                                    <img src="/images/app_intro_feature.png" alt="feature" />
+                            </section>
+                            <section id="about_section_two">
+                                <div className="app_intro_custom_container_two">
+                                    <div className="row">
+                                        <div className="row">
+                                            <div className="app_about_bottom_section d-flex align-items-center justify-content-between">
+                                                <div className="about_image_part">
+                                                    <img src={product.goalImage} alt="about" className="img-fluid" />
                                                 </div>
-                                                <div className="text_section">
-                                                    <h3 className='app-intro-h3'>{feature.title}</h3>
-                                                    <p>{feature.description}</p>
+                                                <div className="about_text_part">
+                                                    <h3 className='app-intro-h3'>What's our main goal?</h3>
+                                                    <p>{product.goal}</p>
                                                 </div>
-                                            </div>)
-                                    }
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </section>
-
-                    <section id="cta_section">
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-lg-6 m-auto">
-                                    <div className="heading_text text-center">
-                                        <h3 className='app-intro-h3'>CTA Section</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                        <a href="true">Download an App</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="cta_top_shape">
+                            </section>
+                            <section id="testmonial">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-lg-6 m-auto">
+                                            <div className="heading_text text-center">
+                                                <h3 className='app-intro-h3'>Testimonials</h3>
+                                            </div>
 
-                        </div>
-                    </section>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="container-fluid">
+                                    <div className="row">
+                                        <div className="col-lg-12">
+                                            <TestimonialCarousel testimonials={product.testimonials} />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </section>
+
+                            <section id="faq_section">
+
+                                <div className="container">
+
+                                    <div className="row">
+                                        <div className="col-lg-6 m-auto">
+                                            <div className="heading_text text-center">
+                                                <h3 className='app-intro-h3'>FAQs</h3>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div className="row">
+                                        <div className="col-lg-10 m-auto">
+                                            {product.faq.map((faq, index) =>
+                                                <Faq key={index} number={index} question={faq.question} answer={faq.answer} />
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+
+
+                            <section className="app_intro_feature">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-lg-6 m-auto">
+                                            <div className="heading_text text-center">
+                                                <h3 className='app-intro-h3'>Why Akool Marketplace</h3>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="container-fluid">
+                                    <div className="row">
+                                        <div className="feature_cards">
+                                            {
+                                                product.features && product.features.map((feature, index) =>
+                                                    <div className={"feature_card d-flex align-items-start m-2"}>
+                                                        <div className="image_section">
+                                                            <img src="/images/app_intro_feature.png" alt="feature" />
+                                                        </div>
+                                                        <div className="text_section">
+                                                            <h3 className='app-intro-h3'>{feature.title}</h3>
+                                                            <p>{feature.description}</p>
+                                                        </div>
+                                                    </div>)
+                                            }
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+
+                            <section id="cta_section">
+                                <div className="container">
+                                    <div className="row">
+                                        <div className="col-lg-6 m-auto">
+                                            <div className="heading_text text-center">
+                                                <h3 className='app-intro-h3'>CTA Section</h3>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                                <a href="true">Download an App</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="cta_top_shape">
+                                </div>
+                            </section>
+                        </>
+                    }
                 </div>}
         </div>
     )
