@@ -10,10 +10,10 @@ import CommerceApps from '../Components/CommerceApps';
 import MoreApps from '../Components/MoreApps';
 import Helmet from 'react-helmet';
 
-const HomeScreen = () =>
+const MetaverseScreen = () =>
     <div>
         <Helmet>
-            <title>Akool</title>
+            <title>Smart Camera</title>
         </Helmet>
         <Navbar />
         <section id="banner">
@@ -21,16 +21,9 @@ const HomeScreen = () =>
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="text_section">
-                            <h3>Commerce</h3>
+                            <h3>Make Content 3d</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                                labore et dolore magna aliqua.
-                                <span>
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                    dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </span>
+                                Akool 3D & video solutions enpower you to create 3D videos and 3D objects with one click.
                             </p>
                             <a href='true' title="buy button">Start Building Today</a>
                         </div>
@@ -38,7 +31,7 @@ const HomeScreen = () =>
                     <div className="col-lg-6">
                         <div className="image_section">
                             <div className="image text-center">
-                                <img src="./images/banner_content.png" alt="" />
+                                <img src="/images/vr.png" alt="" />
                             </div>
                         </div>
                     </div>
@@ -46,12 +39,12 @@ const HomeScreen = () =>
                 </div>
             </div>
             <a href='#use_case_section' className="go_to_bottom_icon">
-                <img src="images/go_to_bottom.png" alt="" />
+                <img src="/images/go_to_bottom.png" alt="" />
             </a>
         </section>
 
         <section id="use_case_section">
-            <img src="images/use_case_banenr.png" alt="" className="uae_banner_image" />
+            <img src="/images/use_case_banenr.png" alt="" className="uae_banner_image" />
             <div className="container use_case_section_container">
                 <div className="row">
                     <div className="col-lg-6 m-auto">
@@ -65,7 +58,7 @@ const HomeScreen = () =>
                     <div className="col-lg-3 px-0 px-col-false col-md-6 mb-md-2">
                         <div className="use_case_card pb-38">
                             <div className="image_section">
-                                <img src="images/use_case_card.png" alt="" />
+                                <img src="/images/use_case_card.png" alt="" />
                             </div>
                             <div className="text_section">
                                 <h3>3D Object
@@ -76,7 +69,7 @@ const HomeScreen = () =>
                     <div className="col-lg-3 col-md-6 mb-md-2">
                         <div className="use_case_card">
                             <div className="image_section">
-                                <img src="images/use_case_card.png" alt="" />
+                                <img src="/images/use_case_card.png" alt="" />
                             </div>
                             <div className="text_section single_text">
                                 <h3>Storage</h3>
@@ -86,7 +79,7 @@ const HomeScreen = () =>
                     <div className="col-lg-3 px-0 px-col-false col-md-6 mb-md-2">
                         <div className="use_case_card pb-38">
                             <div className="image_section">
-                                <img src="images/use_case_card.png" alt="" />
+                                <img src="/images/use_case_card.png" alt="" />
                             </div>
                             <div className="text_section">
                                 <h3>Content
@@ -97,7 +90,7 @@ const HomeScreen = () =>
                     <div className="col-lg-3 col-md-6 mb-md-2">
                         <div className="use_case_card">
                             <div className="image_section">
-                                <img src="images/use_case_card.png" alt="" />
+                                <img src="/images/use_case_card.png" alt="" />
                             </div>
                             <div className="text_section single_text">
                                 <h3>Deploy</h3>
@@ -110,7 +103,7 @@ const HomeScreen = () =>
                 <div className="row">
                     <div className="col-lg-6">
                         <div className="video_image_section">
-                            <img src="images/video_bg.png" alt="video bg" className="w-100" />
+                            <img src="/images/video_bg.png" alt="video bg" className="w-100" />
                             <div className="video_icon ">
                                 <div className="icon_inner">
                                     <a title="play" className="venobox" data-vbtype="iframe"
@@ -171,7 +164,7 @@ const HomeScreen = () =>
                     <div className="feature_cards">
                         <div className="feature_card d-flex align-items-start">
                             <div className="image_section">
-                                <img src="images/feature_card_image.png" alt="feature" />
+                                <img src="/images/feature_card_image.png" alt="feature" />
                             </div>
                             <div className="text_section">
                                 <h3>Feature 1</h3>
@@ -181,7 +174,7 @@ const HomeScreen = () =>
                         </div>
                         <div className="feature_card d-flex align-items-start ml-22">
                             <div className="image_section">
-                                <img src="images/feature_card_image.png" alt="feature" />
+                                <img src="/images/feature_card_image.png" alt="feature" />
                             </div>
                             <div className="text_section">
                                 <h3>Feature 1</h3>
@@ -191,7 +184,7 @@ const HomeScreen = () =>
                         </div>
                         <div className="feature_card d-flex align-items-start ml-22">
                             <div className="image_section">
-                                <img src="images/feature_card_image.png" alt="feature" />
+                                <img src="/images/feature_card_image.png" alt="feature" />
                             </div>
                             <div className="text_section">
                                 <h3>Feature 1</h3>
@@ -233,12 +226,12 @@ const HomeScreen = () =>
                         <OwlCarousel className="slider_section top_selected_apps_slider" items={1} margin={30}
                             responsiveClass={true} nav={true} dots="false" autoplay={false}
                             navText={[
-                                `<div><img src="images/slider_prev_white.png" alt="previous"/></div>`,
-                                `<div><img src="images/slider_next_white.png" alt="next"/></div>`]}>
+                                `<div><img src="/images/slider_prev_white.png" alt="previous"/></div>`,
+                                `<div><img src="/images/slider_next_white.png" alt="next"/></div>`]}>
 
                             <div className="customer_stories_slider_card d-flex">
                                 <div className="image_section w-100">
-                                    <img src="images/young-beautiful-woman-casual-outfit-isolated-studio.png"
+                                    <img src="/images/young-beautiful-woman-casual-outfit-isolated-studio.png"
                                         alt="lady pic" />
                                 </div>
                                 <div className="text_section">
@@ -258,7 +251,7 @@ const HomeScreen = () =>
                             </div>
                             <div className="customer_stories_slider_card d-flex">
                                 <div className="image_section w-100">
-                                    <img src="images/young-beautiful-woman-casual-outfit-isolated-studio.png"
+                                    <img src="/images/young-beautiful-woman-casual-outfit-isolated-studio.png"
                                         alt="lady pic" />
                                 </div>
                                 <div className="text_section">
@@ -290,7 +283,7 @@ const HomeScreen = () =>
                         <div className="footer_content_section">
                             <div className="footer_logo">
                                 <a href='true'>
-                                    <img src="images/footer_logo.png" alt="footer logo" />
+                                    <img src="/images/footer_logo.png" alt="footer logo" />
                                 </a>
                             </div>
                             <div className="footer_nav_section">
@@ -361,4 +354,5 @@ const HomeScreen = () =>
         </section>
     </div>
 
-export default HomeScreen
+
+export default MetaverseScreen

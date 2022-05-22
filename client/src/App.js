@@ -5,7 +5,7 @@ import './assets/css/app.intro.css'
 import './assets/css/media.css'
 import 'font-awesome/css/font-awesome.min.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomeScreen from "./Screens/HomeScreen"
+import CommerceScreen from "./Screens/CommerceScreen"
 import AppIntroScreen from './Screens/AppIntroScreen';
 import AppsScreen from './Screens/AppsScreen';
 import Navbar from './Components/Navbar';
@@ -15,6 +15,8 @@ import { useSelector } from 'react-redux'
 import CreationTools from './Components/CreationTools'
 import RecognitionTools from './Components/RecognitionTools'
 import RegisterScreen from './Screens/RegisterScreen'
+import SmartCameraScreen from './Screens/SmartCameraScreen'
+import MetaverseScreen from './Screens/MetaverseScreen'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
@@ -31,8 +33,10 @@ const App = () => {
           </Route>
         }
         <Route path=':title' element={<AppIntroScreen />} />
-        <Route path='/home' >
-          <Route index element={<HomeScreen />} />
+        <Route path='/solutions' >
+          <Route path='smart_camera' element={<SmartCameraScreen />} />
+          <Route path='metaverse' element={<MetaverseScreen />} />
+          <Route path='commerce' element={<CommerceScreen />} />
         </Route>
         <Route path='/' element={<Navbar hideNavItems />}>
           <Route path='login' element={<LoginScreen />} />

@@ -42,7 +42,6 @@ const AppIntroScreen = () => {
                 <div>
                     {error ? <Error content={<Fragment>We are sorry, but the product "<strong>{title}</strong>" doesn't have any details yet! Be sure to check that in future :{')'}</Fragment>} /> :
                         <>
-                            <Navbar hideNavItems />
                             <section className="banner_two">
                                 <div className="container banner_container">
                                     <div className="row">
