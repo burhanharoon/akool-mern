@@ -32,7 +32,9 @@ const App = () => {
             <Route index element={<AppsScreen />} />
           </Route>
         }
-        <Route path=':title' element={<AppIntroScreen />} />
+        <Route path='/' element={<Navbar />}>
+          <Route path=':title' element={<AppIntroScreen />} />
+        </Route>
         <Route path='/solutions' >
           <Route path='smart_camera' element={<SmartCameraScreen />} />
           <Route path='metaverse' element={<MetaverseScreen />} />

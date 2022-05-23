@@ -36,16 +36,24 @@ const Navbar = ({ hideNavItems }) => {
                                 <li className="nav-item">
                                     <Link className="nav-link page_link" to='/apps'>Products</Link>
                                 </li>
-                                <li className="nav-item">
+                                <li className="nav-item solutions">
                                     <Link className="nav-link page_link" to='/apps'>Solutions</Link>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href='true'>Pricing</a>
                                 </li>
-                                <div className='d-flex flex-column gap-3 bg-primary p-2'>
-                                    <Link to='/' className='text-light d-flex justify-content-center align-items-center'>
+                                <div className='solutions-tab d-flex flex-column gap-4 bg-primary p-3 rounded position-absolute align-items-start' style={{ top: '2rem', right: '0rem', width: '14rem' }}>
+                                    <Link to='/solutions/smart_camera' className='text-light w-100 d-flex gap-2 align-items-center'>
                                         <img src="/images/smart camera.png" width={40} alt="smart camera" />
-                                        <p>Smart Camera</p>
+                                        <p className='text-light m-0'>Smart Camera</p>
+                                    </Link>
+                                    <Link to='/solutions/metaverse' className='text-light w-100 d-flex gap-2 align-items-center'>
+                                        <img src="/images/metaverse.png" width={40} alt="smart camera" />
+                                        <p className='text-light m-0'>Metaverse</p>
+                                    </Link>
+                                    <Link to='/solutions/commerce' className='text-light w-100 d-flex gap-2 align-items-center'>
+                                        <img src="/images/commerce.png" width={40} alt="smart camera" />
+                                        <p className='text-light m-0'>Commerce</p>
                                     </Link>
 
                                 </div>
