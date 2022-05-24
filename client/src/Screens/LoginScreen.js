@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { saveUserInfo } from '../actions/userActions'
 import { useSelector } from 'react-redux'
 import Helmet from 'react-helmet'
+import { Toast } from 'react-bootstrap'
 
 
 const LoginScreen = () => {
@@ -15,6 +16,7 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
+    const [error, showError] = useState(false)
     const userLoggedIn = useSelector(state => state.userInfo)
     const handleLogin = (e) => {
         e.preventDefault()
@@ -25,11 +27,20 @@ const LoginScreen = () => {
         }
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
+                localStorage.setItem('token', data.token)
                 dispatch(saveUserInfo(data.user))
                 setLoading(false)
                 navigate('/')
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                setTimeout(() => {
+                    showError(false)
+
+                }, 2000);
+                showError(true)
+                setLoading(false)
+                console.log(err)
+            })
     }
 
     // If ths user is already logged in then redirect to home screen
@@ -39,6 +50,17 @@ const LoginScreen = () => {
         <Helmet>
             <title>Login</title>
         </Helmet>
+        <Toast show={error ? true : false} className="position-fixed end-0 d-inline-block m-1" bg='danger' style={{ zIndex: '100', top: '4rem' }}>
+            <Toast.Header>
+                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                <strong className="me-auto">Login</strong>
+                <small>11 mins ago</small>
+            </Toast.Header>
+            {/* className={variant === 'Dark' && 'text-white'} */}
+            <Toast.Body className='text-white'>
+                Wrong email/password. Please try again!
+            </Toast.Body>
+        </Toast>
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">

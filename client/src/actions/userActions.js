@@ -15,6 +15,7 @@ export const saveUserInfo = (data) => async (dispatch) => {
     })
 }
 export const logoutUser = () => async (dispatch) => {
+    localStorage.removeItem('token')
     localStorage.removeItem('user')
     dispatch({
         type: USER_LOGOUT_SUCCESS,
