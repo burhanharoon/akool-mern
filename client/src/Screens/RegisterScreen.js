@@ -15,7 +15,6 @@ const RegisterScreen = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [loading, setLoading] = useState(false)
-    const [wrongPassword, setWrongPassword] = useState(false)
     const [confirmRegistration, setConfirmRegistration] = useState(false)
     const [toastMessage, setToastMessage] = useState('')
     const userLoggedIn = useSelector(state => state.userInfo)

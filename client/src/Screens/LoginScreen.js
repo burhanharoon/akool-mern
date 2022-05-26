@@ -17,7 +17,9 @@ const LoginScreen = () => {
     const [password, setPassword] = useState('')
     const [loading, setLoading] = useState(false)
     const [error, showError] = useState(false)
+
     const userLoggedIn = useSelector(state => state.userInfo)
+
     const handleLogin = (e) => {
         e.preventDefault()
         setLoading(true)
@@ -27,10 +29,15 @@ const LoginScreen = () => {
         }
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
-                // localStorage.setItem('token', data.token)
-                // dispatch(saveUserInfo(data.user))
-                // setLoading(false)
-                // navigate('/')
+                if (!data.user.email_verified) {
+
+                }
+                else {
+                    // localStorage.setItem('token', data.token)
+                    // dispatch(saveUserInfo(data.user))
+                    // setLoading(false)
+                    // navigate('/')
+                }
                 console.log(data);
             })
             .catch(err => {

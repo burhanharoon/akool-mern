@@ -17,6 +17,7 @@ import RecognitionTools from './Components/RecognitionTools'
 import RegisterScreen from './Screens/RegisterScreen'
 import SmartCameraScreen from './Screens/SmartCameraScreen'
 import MetaverseScreen from './Screens/MetaverseScreen'
+import { OtpVerification } from './Screens/OtpVerification'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
@@ -34,6 +35,7 @@ const App = () => {
         }
         <Route path='/' element={<Navbar />}>
           <Route path=':title' element={<AppIntroScreen />} />
+          <Route path='otp' element={<OtpVerification />} />
         </Route>
         <Route path='/solutions' >
           <Route path='smart_camera' element={<SmartCameraScreen />} />
