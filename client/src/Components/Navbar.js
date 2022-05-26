@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { logoutUser } from '../actions/userActions'
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from 'react-bootstrap';
+import { Button, Dropdown } from 'react-bootstrap';
 
 const Navbar = ({ hideNavItems }) => {
     const [showNav, setShowNav] = useState(false)
@@ -15,10 +15,12 @@ const Navbar = ({ hideNavItems }) => {
         dispatch(logoutUser())
         navigate('/')
     }
+    const [showDropdown, setShowDropdown] = useState(false);
+
     return (
         <>
-            <nav className="navbar navbar-expand-lg">
-                <div className="container">
+            <nav className="navbar navbar-expand-lg w-100">
+                <div className="container w-100 m-0 mw-100">
                     <Link className="navbar-brand" to={'/'} title="Home">
                         <img src="/images/logo.png" alt="" />
                     </Link>
@@ -29,20 +31,35 @@ const Navbar = ({ hideNavItems }) => {
                     </button>
                     <div className={showNav ? "collapse navbar-collapse show" : "collapse navbar-collapse"} id="navbarSupportedContent">
                         <div className='w-100'>
-                            <ul className="navbar-nav ms-auto flex justify-content-center items-center position-relative">
+                            <ul className="navbar-nav ms-auto flex justify-content-center align-items-center position-relative text-white fs-6">
                                 <li className="nav-item">
-                                    <Link to='/' className="nav-link page_link">Akool</Link>
+                                    <Link className="nav-link page_link" to='/'>Products</Link>
                                 </li>
-                                <li className="nav-item">
-                                    <Link className="nav-link page_link" to='/apps'>Products</Link>
-                                </li>
-                                <li className="nav-item solutions">
-                                    <Link className="nav-link page_link" to='/apps'>Solutions</Link>
-                                </li>
+                                <div className='dropdown '>
+                                    <li className="nav-item ">
+                                        <a className="nav-link page_link" href=' #'>Solution
+                                            <i className="fa fa-caret-down mx-1"></i>
+                                        </a>
+                                    </li>
+                                    <div className='dropdown-content'>
+                                        <Link to='/solutions/smart_camera' className='text-light w-100 d-flex gap-2 align-items-center'>
+                                            <img src="/images/smart camera.png" width={40} alt="smart camera" />
+                                            <p className='text-light m-0'>Smart Camera</p>
+                                        </Link>
+                                        <Link to='/solutions/metaverse' className='text-light w-100 d-flex gap-2 align-items-center'>
+                                            <img src="/images/metaverse.png" width={40} alt="smart camera" />
+                                            <p className='text-light m-0'>Metaverse</p>
+                                        </Link>
+                                        <Link to='/solutions/commerce' className='text-light w-100 d-flex gap-2 align-items-center'>
+                                            <img src="/images/commerce.png" width={40} alt="smart camera" />
+                                            <p className='text-light m-0'>Commerce</p>
+                                        </Link>
+                                    </div>
+                                </div>
                                 <li className="nav-item">
                                     <a className="nav-link" href='true'>Pricing</a>
                                 </li>
-                                <div className='solutions-tab d-flex flex-column gap-4 bg-primary p-3 rounded position-absolute align-items-start' style={{ top: '2rem', right: '0rem', width: '14rem' }}>
+                                {/* <div className='solutions-tab d-flex flex-column gap-4 bg-primary p-3 rounded position-absolute align-items-start' style={{ top: '2rem', right: '0rem', width: '14rem' }}>
                                     <Link to='/solutions/smart_camera' className='text-light w-100 d-flex gap-2 align-items-center'>
                                         <img src="/images/smart camera.png" width={40} alt="smart camera" />
                                         <p className='text-light m-0'>Smart Camera</p>
@@ -55,8 +72,16 @@ const Navbar = ({ hideNavItems }) => {
                                         <img src="/images/commerce.png" width={40} alt="smart camera" />
                                         <p className='text-light m-0'>Commerce</p>
                                     </Link>
-
-                                </div>
+                                </div> */}
+                                <li className="nav-item">
+                                    <a className="nav-link" href='true'>Apps</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href='true'>Market</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href='true'>Company</a>
+                                </li>
                             </ul>
                         </div>
                         <ul className="navbar-nav ms-auto">

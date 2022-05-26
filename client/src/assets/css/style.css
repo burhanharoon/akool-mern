@@ -1273,3 +1273,29 @@ ol {
     background-color: #eef3ff;
     border-radius: 10px;
 }
+
+.dropdown-content {
+    width: 16rem;
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 1.4rem;
+    align-items: flex-start;
+    background-color: #091D58;
+
+    /* d-flex flex-column gap-4 bg-primary p-3 rounded position-absolute align-items-start */
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+@media (max-width:40rem) {
+    .dropdown {
+        width: 100%;
+    }
+}

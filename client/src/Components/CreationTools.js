@@ -37,6 +37,8 @@ const CreationTools = () => {
     useEffect(() => {
         searchProduct()
     }, [search])
+    let link = 'http://localhost:3001/3d'
+    let token = localStorage.getItem('token')
 
     return (
         <div className="used-area">
@@ -98,7 +100,7 @@ const CreationTools = () => {
                             :
                             result.map(tool =>
                                 <div key={tool._id} className="col-lg-4 col-md-6">
-                                    <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={tool.link} externalLink={true} maintainHistory={true} />
+                                    <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} link={`${link}?token=${token}`} externalLink={true} maintainHistory={true} />
                                 </div>
                             )
                         }

@@ -35,8 +35,7 @@ const LoginScreen = () => {
             .catch(err => {
                 setTimeout(() => {
                     showError(false)
-
-                }, 2000);
+                }, 3000);
                 showError(true)
                 setLoading(false)
                 console.log(err)
@@ -54,7 +53,6 @@ const LoginScreen = () => {
             <Toast.Header>
                 <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
                 <strong className="me-auto">Login</strong>
-                <small>11 mins ago</small>
             </Toast.Header>
             {/* className={variant === 'Dark' && 'text-white'} */}
             <Toast.Body className='text-white'>

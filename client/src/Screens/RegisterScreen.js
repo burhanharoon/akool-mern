@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { Navigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Helmet from 'react-helmet'
+import { Toast } from 'react-bootstrap'
 
 
 const RegisterScreen = () => {
@@ -16,14 +17,28 @@ const RegisterScreen = () => {
     const [loading, setLoading] = useState(false)
     const [wrongPassword, setWrongPassword] = useState(false)
     const [confirmRegistration, setConfirmRegistration] = useState(false)
+    const [toastMessage, setToastMessage] = useState('')
     const userLoggedIn = useSelector(state => state.userInfo)
+
+    const timeoutToastMessage = (message, time = 3000) => {
+        setTimeout(() => {
+            setToastMessage(null)
+        }, time);
+        setToastMessage(message)
+
+    }
     const handleRegister = (e) => {
         e.preventDefault()
         setLoading(true)
-        if (password !== confirmPassword) {
-            setWrongPassword(true)
+        if (!firstName.trim() || !lastName.trim()) {
+            timeoutToastMessage('Please write your first and last name!')
             setLoading(false)
-        } else {
+        }
+        else if (password !== confirmPassword) {
+            timeoutToastMessage('Passwords do not match!')
+            setLoading(false)
+        }
+        else {
             const data = {
                 email,
                 firstName: firstName.trim(),
@@ -32,19 +47,18 @@ const RegisterScreen = () => {
             }
             axios.post('https://api.akool.com/api/v1/public/register', data)
                 .then((res) => {
-                    setLoading(false)
                     setConfirmRegistration(true)
                     setTimeout(() => {
                         setConfirmRegistration(false)
                     }, 4000);
                     console.log(res);
+                    setLoading(false)
                 })
                 .catch(err => {
+                    timeoutToastMessage('Error Occurred. Please try again.')
                     setLoading(false)
-                    console.log(err)
                 })
         }
-
     }
 
     // If ths user is already logged in then redirect to home screen
@@ -54,6 +68,16 @@ const RegisterScreen = () => {
         <Helmet>
             <title>Register</title>
         </Helmet>
+        <Toast show={toastMessage ? true : false} className="position-fixed end-0 d-inline-block m-1" bg='danger' style={{ zIndex: '100', top: '4rem' }}>
+            <Toast.Header>
+                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                <strong className="me-auto">Register</strong>
+            </Toast.Header>
+            {/* className={variant === 'Dark' && 'text-white'} */}
+            <Toast.Body className='text-white'>
+                {toastMessage}
+            </Toast.Body>
+        </Toast>
         <div className="container">
             <div className="row">
                 <div className="col-lg-12">
@@ -109,11 +133,6 @@ const RegisterScreen = () => {
                     <div className="input-group mb-3">
                         <input value={confirmPassword} onChange={(e) => { setConfirmPassword(e.target.value) }} className="form-control" type="password" placeholder="Confirm Password" />
                     </div>
-                    {wrongPassword &&
-                        <div className="alert alert-warning " role="alert">
-                            Passwords didn't match. Please try again!
-                        </div>
-                    }
                     {confirmRegistration &&
                         <div className="alert alert-success " role="alert">
                             Registration Successful!

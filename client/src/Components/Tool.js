@@ -48,20 +48,7 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                     <div style={{ position: 'absolute', border: '1px solid #000C3E', top: '0', right: '1rem', borderRadius: '50%', width: '25px', height: '25px', justifyContent: 'center', display: 'flex', alignItems: 'center', color: 'black' }}>
                         <i className="fa fa-heart"></i>
                     </div>
-                    {
-                        user &&
-                        <>
-                            {externalLink ?
-                                <a href={link} target='_blank' rel="noreferrer">
-                                    <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                                </a> :
-                                <Link to={link}>
-                                    <Button style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                                </Link>
 
-                            }
-                        </>
-                    }
                 </div>
                 <div className="bottom_section">
                     <h3 className='launch-h3'>{title}</h3>
@@ -75,6 +62,15 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                     <Link to={title} className='w-100'>
                         <Button className='my-2 w-100 bg-primary bg-gradient'>Details</Button>
                     </Link>
+                    {externalLink ?
+                        <a className='w-100' href={link} target='_blank' rel="noreferrer">
+                            <Button className='my-2 w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                        </a> :
+                        <Link className='w-100' to={link}>
+                            <Button className='w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                        </Link>
+
+                    }
                 </div>
             </div>
         </div>
