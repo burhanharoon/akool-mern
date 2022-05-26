@@ -27,17 +27,18 @@ const LoginScreen = () => {
         }
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
-                localStorage.setItem('token', data.token)
-                dispatch(saveUserInfo(data.user))
-                setLoading(false)
-                navigate('/')
+                // localStorage.setItem('token', data.token)
+                // dispatch(saveUserInfo(data.user))
+                // setLoading(false)
+                // navigate('/')
+                console.log(data);
             })
             .catch(err => {
-                setTimeout(() => {
-                    showError(false)
-                }, 3000);
-                showError(true)
-                setLoading(false)
+                // setTimeout(() => {
+                //     showError(false)
+                // }, 3000);
+                // showError(true)
+                // setLoading(false)
                 console.log(err)
             })
     }
