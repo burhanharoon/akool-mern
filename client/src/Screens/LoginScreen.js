@@ -34,19 +34,19 @@ const LoginScreen = () => {
                     navigate('/otp')
                 }
                 else {
-                    // localStorage.setItem('token', data.token)
-                    // dispatch(saveUserInfo(data.user))
-                    // setLoading(false)
-                    // navigate('/')
+                    localStorage.setItem('token', data.token)
+                    dispatch(saveUserInfo(data.user))
+                    setLoading(false)
+                    navigate('/')
                 }
                 console.log(data);
             })
             .catch(err => {
-                // setTimeout(() => {
-                //     showError(false)
-                // }, 3000);
-                // showError(true)
-                // setLoading(false)
+                setTimeout(() => {
+                    showError(false)
+                }, 3000);
+                showError(true)
+                setLoading(false)
                 console.log(err)
             })
     }

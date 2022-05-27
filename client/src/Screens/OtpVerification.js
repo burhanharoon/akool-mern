@@ -1,47 +1,56 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { Toast } from 'react-bootstrap'
+import { Button, Toast } from 'react-bootstrap'
 import Helmet from 'react-helmet'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { saveUserInfo } from '../actions/userActions'
 
 export const OtpVerification = () => {
-
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
     const [toastMessage, setToastMessage] = useState('')
     const [loading, setLoading] = useState(false)
     const [otp, setOtp] = useState(null)
+    const [user, setUser] = useState({})
+
+    const timeoutToastMessage = (message, time = 3000) => {
+        setTimeout(() => setToastMessage(null), time);
+        setToastMessage(message)
+    }
 
     const handleVerification = (e) => {
         e.preventDefault()
-
+        setLoading(true)
+        const data = { otp, email: null };
+        axios.put('https://api.akool.com/api/v1/user/verify_otp', data,
+            { headers: { 'Authorization': localStorage.getItem('token') } })
+            .then(({ data }) => {
+                console.log(data);
+                dispatch(saveUserInfo(data.user))
+                setLoading(false)
+                navigate('/')
+            })
+            .catch(err => {
+                timeoutToastMessage('Wrong Otp Entered. Please try again!')
+                setLoading(false)
+                console.log(err)
+            })
     }
 
-    useEffect(() => {
-        // axios.get('https://api.akool.com/api/v1/user/whoami',
-        //     { headers: { 'Authorization': localStorage.getItem('akool_token') } })
-        //     .then(({ data }) => {
-        //         if (!data.user.email_verified) {
-        //             localStorage.setItem('token', data.token)
-        //             navigate('/otp')
-        //         }
-        //         else {
-        //             // localStorage.setItem('token', data.token)
-        //             // dispatch(saveUserInfo(data.user))
-        //             // setLoading(false)
-        //             // navigate('/')
-        //         }
-        //         console.log(data);
-        //     })
-        //     .catch(err => {
-        //         // setTimeout(() => {
-        //         //     showError(false)
-        //         // }, 3000);
-        //         // showError(true)
-        //         // setLoading(false)
-        //         console.log(err)
-        //     })
+    const resendOtp = () => {
+        setLoading(false)
+        axios.get('https://api.akool.com/api/v1/user/resend_otp',
+            { headers: { 'Authorization': localStorage.getItem('token') } })
+            .then(({ data }) => {
+                console.log(data);
 
-    }, [])
-
+            })
+            .catch(err => {
+                setLoading(false)
+                console.log(err)
+            })
+    }
 
     return (
         <div className="hero-aera login-hero">
@@ -51,10 +60,10 @@ export const OtpVerification = () => {
             <Toast show={toastMessage ? true : false} className="position-fixed end-0 d-inline-block m-1" bg='danger' style={{ zIndex: '100', top: '4rem' }}>
                 <Toast.Header>
                     <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                    <strong className="me-auto">Login</strong>
+                    <strong className="me-auto">Otp Verification</strong>
                 </Toast.Header>
                 <Toast.Body className='text-white'>
-                    Wrong email/password. Please try again!
+                    {toastMessage}
                 </Toast.Body>
             </Toast>
             <div className="container">
@@ -101,7 +110,7 @@ export const OtpVerification = () => {
                 </div>
                 <form onSubmit={(e) => { handleVerification(e) }}>
                     <div className="login-inp">
-                        <input value={otp} onChange={(e) => { setOtp(e.target.value) }} name="otp" type="Otp" placeholder="Enter Verification Code" />
+                        <input value={otp} onChange={(e) => { setOtp(e.target.value.trim()) }} name="otp" type="Otp" placeholder="Enter Verification Code" />
                     </div>
                     <div className="log-bt">
                         <button type="submit">
@@ -111,7 +120,7 @@ export const OtpVerification = () => {
                     </div>
                     <div className="log-btn">
                         <p>Didn't receive a verification code?</p>
-                        <Link to='/register'>Resend</Link>
+                        <Button onClick={resendOtp}>Resend</Button>
                     </div>
                 </form>
             </div>

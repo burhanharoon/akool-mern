@@ -26,6 +26,7 @@ const RegisterScreen = () => {
         setToastMessage(message)
 
     }
+
     const handleRegister = (e) => {
         e.preventDefault()
         setLoading(true)
