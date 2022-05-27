@@ -58,15 +58,24 @@ const Tool = ({ title, logo, description, rating, maintainHistory = true, launch
                             {Array(rating).fill(1).map(x => <span><i className="fa fa-star" aria-hidden="true"></i></span>)}
                         </div>
                     </div>
-                    <Link to={title} className='w-100'>
+                    <Link to={'/' + title} className='w-100'>
                         <Button className='my-2 w-100 bg-primary bg-gradient'>Details</Button>
                     </Link>
-                    <a className='w-100' href={launchLink} target='_blank' rel="noreferrer">
-                        <Button onClick={addToUsed} className='my-2 w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                    </a>
+                    {
+                        launchLink ?
+                            <a className='w-100' href={launchLink} target='_blank' rel="noreferrer"  >
+                                <Button onClick={addToUsed} className='my-2 w-100' style={{ backgroundColor: '#000C3E' }}>
+                                    Launch
+                                </Button>
+                            </a> :
+                            <Button onClick={addToUsed} className='my-2 w-100' style={{ backgroundColor: '#000C3E' }} disabled>
+                                Launch
+                            </Button>
+
+                    }
                 </div>
             </div>
-        </div>
+        </div >
     )
 
 }

@@ -38,6 +38,8 @@ const RecognitionTools = () => {
         searchProduct()
     }, [search])
 
+    let token = localStorage.getItem('token')
+
     return (
         <div className="used-area">
             <div className="container">
@@ -97,7 +99,7 @@ const RecognitionTools = () => {
                             result.map(tool =>
 
                                 <div key={tool._id} className="col-lg-4 col-md-6">
-                                    <Tool title={tool.title} description={tool.description} rating={tool.rating} link={tool.link} externalLink={true} logo={tool.logo} />
+                                    <Tool key={tool._id} title={tool.title} description={tool.description} rating={tool.rating} logo={tool.logo} launchLink={tool.link && `${tool.link}?token=${token}`} />
                                 </div>
                             )
                         }
