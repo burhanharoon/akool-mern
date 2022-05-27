@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const Tool = ({ title, logo, description, rating, link, maintainHistory = true, externalLink = false }) => {
+const Tool = ({ title, logo, description, rating, maintainHistory = true, launchLink }) => {
 
     const user = useSelector(state => state.userInfo)
 
@@ -15,7 +15,6 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                 logo,
                 description,
                 rating,
-                link
             }
             if (localStorage.getItem('used')) {
                 let usedItems = JSON.parse(localStorage.getItem('used'))
@@ -39,7 +38,7 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
         }
     }
     return (
-        <div onClick={addToUsed}>
+        <div>
             <div className="slider_card">
                 <div className="top_section" style={{ alignItems: 'self-end', position: 'relative' }}>
                     <div className="image_section">
@@ -62,15 +61,9 @@ const Tool = ({ title, logo, description, rating, link, maintainHistory = true, 
                     <Link to={title} className='w-100'>
                         <Button className='my-2 w-100 bg-primary bg-gradient'>Details</Button>
                     </Link>
-                    {externalLink ?
-                        <a className='w-100' href={link} target='_blank' rel="noreferrer">
-                            <Button className='my-2 w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                        </a> :
-                        <Link className='w-100' to={link}>
-                            <Button className='w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
-                        </Link>
-
-                    }
+                    <a className='w-100' href={launchLink} target='_blank' rel="noreferrer">
+                        <Button onClick={addToUsed} className='my-2 w-100' style={{ backgroundColor: '#000C3E' }}>Launch</Button>
+                    </a>
                 </div>
             </div>
         </div>

@@ -9,14 +9,17 @@ import { saveUserInfo } from '../actions/userActions'
 export const OtpVerification = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const [toastMessage, setToastMessage] = useState('')
+    const [toastMessage, setToastMessage] = useState({
+        message: null,
+        bg: 'danger',
+        title: 'Otp Verification'
+    })
     const [loading, setLoading] = useState(false)
     const [otp, setOtp] = useState(null)
-    const [user, setUser] = useState({})
 
-    const timeoutToastMessage = (message, time = 3000) => {
-        setTimeout(() => setToastMessage(null), time);
-        setToastMessage(message)
+    const timeoutToastMessage = (message, time = 3000, bg = 'danger') => {
+        setTimeout(() => setToastMessage({ ...toastMessage, message: null, bg }), time);
+        setToastMessage({ ...toastMessage, message, bg })
     }
 
     const handleVerification = (e) => {
@@ -39,12 +42,11 @@ export const OtpVerification = () => {
     }
 
     const resendOtp = () => {
-        setLoading(false)
+        setLoading(true)
         axios.get('https://api.akool.com/api/v1/user/resend_otp',
             { headers: { 'Authorization': localStorage.getItem('token') } })
             .then(({ data }) => {
-                console.log(data);
-
+                timeoutToastMessage('Otp Successfully Resend', 3000, 'success')
             })
             .catch(err => {
                 setLoading(false)
@@ -57,13 +59,13 @@ export const OtpVerification = () => {
             <Helmet>
                 <title>Login</title>
             </Helmet>
-            <Toast show={toastMessage ? true : false} className="position-fixed end-0 d-inline-block m-1" bg='danger' style={{ zIndex: '100', top: '4rem' }}>
+            <Toast show={toastMessage.message ? true : false} className="position-fixed end-0 d-inline-block m-1" bg={toastMessage.bg} style={{ zIndex: '100', top: '4rem' }}>
                 <Toast.Header>
                     <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                    <strong className="me-auto">Otp Verification</strong>
+                    <strong className="me-auto">{toastMessage.title}</strong>
                 </Toast.Header>
                 <Toast.Body className='text-white'>
-                    {toastMessage}
+                    {toastMessage.message}
                 </Toast.Body>
             </Toast>
             <div className="container">

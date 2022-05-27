@@ -18,6 +18,7 @@ import RegisterScreen from './Screens/RegisterScreen'
 import SmartCameraScreen from './Screens/SmartCameraScreen'
 import MetaverseScreen from './Screens/MetaverseScreen'
 import { OtpVerification } from './Screens/OtpVerification'
+import Error from './Components/Error'
 
 const App = () => {
   const userLoggedIn = useSelector(state => state.userInfo)
@@ -46,6 +47,9 @@ const App = () => {
           <Route path='login' element={<LoginScreen />} />
           <Route path='register' element={<RegisterScreen />} />
         </Route>
+        <Route path="/404" element={<Error />} />
+        <Route path="*" element={<Error />} />
+
       </Routes>
     </BrowserRouter>
   );

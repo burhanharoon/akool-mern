@@ -102,7 +102,7 @@ const AppsScreen = () => {
                                 :
                                 result.map(item =>
                                     <div key={item._id} className="col-lg-4 col-md-6">
-                                        <Tool title={item.title} logo={item.logo} description={item.description} rating={item.rating} link={item.title} maintainHistory={false} />
+                                        <Tool title={item.title} logo={item.logo} description={item.description} rating={item.rating} launchLink={item.link} maintainHistory={false} />
                                     </div>
                                 )
                             }
