@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import { Toast } from 'react-bootstrap'
 import Helmet from 'react-helmet'
 import { Link } from 'react-router-dom'
@@ -13,6 +14,34 @@ export const OtpVerification = () => {
         e.preventDefault()
 
     }
+
+    useEffect(() => {
+        // axios.get('https://api.akool.com/api/v1/user/whoami',
+        //     { headers: { 'Authorization': localStorage.getItem('akool_token') } })
+        //     .then(({ data }) => {
+        //         if (!data.user.email_verified) {
+        //             localStorage.setItem('token', data.token)
+        //             navigate('/otp')
+        //         }
+        //         else {
+        //             // localStorage.setItem('token', data.token)
+        //             // dispatch(saveUserInfo(data.user))
+        //             // setLoading(false)
+        //             // navigate('/')
+        //         }
+        //         console.log(data);
+        //     })
+        //     .catch(err => {
+        //         // setTimeout(() => {
+        //         //     showError(false)
+        //         // }, 3000);
+        //         // showError(true)
+        //         // setLoading(false)
+        //         console.log(err)
+        //     })
+
+    }, [])
+
 
     return (
         <div className="hero-aera login-hero">

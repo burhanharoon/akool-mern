@@ -30,7 +30,8 @@ const LoginScreen = () => {
         axios.post('https://api.akool.com/api/v1/public/login', data)
             .then(({ data }) => {
                 if (!data.user.email_verified) {
-
+                    localStorage.setItem('token', data.token)
+                    navigate('/otp')
                 }
                 else {
                     // localStorage.setItem('token', data.token)
